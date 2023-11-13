@@ -631,9 +631,9 @@ namespace JoinTheMilitary
                 Orientation = "Left",
                 X = 100,
                 Y = -250,
-                Width = 400,
+                Width = 550,
                 Height = 100,
-                CentreX = 100 + (400 / 2),
+                CentreX = 100 + (550 / 2),
                 CentreY = -250 + (100 / 2),
 
                 BorderWidth = 5,
@@ -645,14 +645,66 @@ namespace JoinTheMilitary
                     Elements = TextCharacter.GetString("NUMBER OF WARS RIGHT NOW"),
                     ElementSize = 5,
                     Color = Color.Black
-                }
+                },
+
+                Data = new List<string>() { "Wars" }
+            };
+            UIItem WikiSoldiers = new UIItem()
+            {
+                Type = "Button",
+
+                Orientation = "Left",
+                X = 100,
+                Y = 0,
+                Width = 550,
+                Height = 100,
+                CentreX = 100 + (550 / 2),
+                CentreY = 0 + (100 / 2),
+
+                BorderWidth = 5,
+                BorderColor = Color.Black,
+                BaseColor = Color.Wheat,
+
+                Text = new TextElement()
+                {
+                    Elements = TextCharacter.GetString("NUMBER OF SOLDIERS RIGHT NOW"),
+                    ElementSize = 5,
+                    Color = Color.Black
+                },
+
+                Data = new List<string>() { "Soldiers" }
+            };
+            UIItem WikiNukes = new UIItem()
+            {
+                Type = "Button",
+
+                Orientation = "Left",
+                X = 100,
+                Y = 250,
+                Width = 550,
+                Height = 100,
+                CentreX = 100 + (550 / 2),
+                CentreY = 250 + (100 / 2),
+
+                BorderWidth = 5,
+                BorderColor = Color.Black,
+                BaseColor = Color.Wheat,
+
+                Text = new TextElement()
+                {
+                    Elements = TextCharacter.GetString("NUMBER OF NUKES RIGHT NOW"),
+                    ElementSize = 5,
+                    Color = Color.Black
+                },
+
+                Data = new List<string>() { "Nukes" }
             };
 
             UIPages.Add(new UIPage()
             {
                 Type = "Wiki",
 
-                UIItems = new List<UIItem>() { UniQuit, UniHome, WikiMessage, WikiWarsFaught }
+                UIItems = new List<UIItem>() { UniQuit, UniHome, WikiMessage, WikiWarsFaught, WikiSoldiers, WikiNukes }
             });
 
             #endregion
