@@ -624,12 +624,35 @@ namespace JoinTheMilitary
                     Color = Color.Black
                 }
             };
+            UIItem WikiWarsFaught = new UIItem()
+            {
+                Type = "Button",
+
+                Orientation = "Left",
+                X = 100,
+                Y = -250,
+                Width = 400,
+                Height = 100,
+                CentreX = 100 + (400 / 2),
+                CentreY = -250 + (100 / 2),
+
+                BorderWidth = 5,
+                BorderColor = Color.Black,
+                BaseColor = Color.Wheat,
+
+                Text = new TextElement()
+                {
+                    Elements = TextCharacter.GetString("NUMBER OF WARS RIGHT NOW"),
+                    ElementSize = 5,
+                    Color = Color.Black
+                }
+            };
 
             UIPages.Add(new UIPage()
             {
                 Type = "Wiki",
 
-                UIItems = new List<UIItem>() { UniQuit, UniHome, WikiMessage }
+                UIItems = new List<UIItem>() { UniQuit, UniHome, WikiMessage, WikiWarsFaught }
             });
 
             #endregion
