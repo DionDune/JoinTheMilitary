@@ -1485,56 +1485,46 @@ namespace JoinTheMilitary
 
         private void UserControl_ButtonPress(List<string> Data)
         {
-            if (Data != null)
+            if (Data.Count == 1)
             {
-                if (Data.Contains("Home"))
+                switch (Data[0])
                 {
-                    UI_ChangePage("Start");
-                }
-                else if (Data.Contains("Resume"))
-                {
-                    UI_ChangePage("Play");
-                }
-                else if (Data.Contains("Quit"))
-                {
-                    System.Environment.Exit(0);
-                }
-
-                if (Data.Contains("ENLIST"))
-                {
-                    UI_ChangePage("Information");
-                }
-                else if (Data.Contains("Info Continue"))
-                {
-                    UI_ChangePage("Game Select");
-                }
-                else if (Data.Contains("Wiki"))
-                {
-                    UI_ChangePage("Wiki");
-                }
-                else if (Data.Contains("Wars"))
-                {
-                    UI_ChangePage("Wars");
-                }
-                else if (Data.Contains("Soldiers"))
-                {
-                    UI_ChangePage("Soldiers");
-                }
-                else if (Data.Contains("Money Global"))
-                {
-                    UI_ChangePage("Money Global");
-                }
-                else if (Data.Contains("Money US"))
-                {
-                    UI_ChangePage("Money US");
-                }
-                else if (Data.Contains("Deaths"))
-                {
-                    UI_ChangePage("Deaths");
-                }
-                else if (Data.Contains("Nukes"))
-                {
-                    UI_ChangePage("Nukes");
+                    case "Home":
+                        UI_ChangePage("Start");
+                        break;
+                    case "Resume":
+                        UI_ChangePage("Play");
+                        break;
+                    case "Quit":
+                        System.Environment.Exit(0);
+                        break;
+                    case "ENLIST":
+                        UI_ChangePage("Information");
+                        break;
+                    case "Info Continue":
+                        UI_ChangePage("Game Select");
+                        break;
+                    case "Wiki":
+                        UI_ChangePage("Wiki");
+                        break;
+                    case "Wars":
+                        UI_ChangePage("Wars");
+                        break;
+                    case "Soldiers":
+                        UI_ChangePage("Soldiers");
+                        break;
+                    case "Money Global":
+                        UI_ChangePage("Money Global");
+                        break;
+                    case "Money US":
+                        UI_ChangePage("Money US");
+                        break;
+                    case "Deaths":
+                        UI_ChangePage("Deaths");
+                        break;
+                    case "Nukes":
+                        UI_ChangePage("Nukes");
+                        break;
                 }
             }
         }
