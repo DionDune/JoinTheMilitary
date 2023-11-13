@@ -1056,30 +1056,33 @@ namespace JoinTheMilitary
 
         private void UserControl_ButtonPress(List<string> Data)
         {
-            if (Data.Contains("Home"))
+            if (Data != null)
             {
-                UI_ChangePage("Start");
-            }
-            else if (Data.Contains("Resume"))
-            {
-                UI_ChangePage("Play");
-            }
-            else if (Data.Contains("Quit"))
-            {
-                System.Environment.Exit(0);
-            }
+                if (Data.Contains("Home"))
+                {
+                    UI_ChangePage("Start");
+                }
+                else if (Data.Contains("Resume"))
+                {
+                    UI_ChangePage("Play");
+                }
+                else if (Data.Contains("Quit"))
+                {
+                    System.Environment.Exit(0);
+                }
 
-            if (Data.Contains("ENLIST"))
-            {
-                UI_ChangePage("Information");
-            }
-            else if (Data.Contains("Info Continue"))
-            {
-                UI_ChangePage("Game Select");
-            }
-            else if (Data.Contains("Wiki"))
-            {
-                UI_ChangePage("Wiki");
+                if (Data.Contains("ENLIST"))
+                {
+                    UI_ChangePage("Information");
+                }
+                else if (Data.Contains("Info Continue"))
+                {
+                    UI_ChangePage("Game Select");
+                }
+                else if (Data.Contains("Wiki"))
+                {
+                    UI_ChangePage("Wiki");
+                }
             }
         }
 
