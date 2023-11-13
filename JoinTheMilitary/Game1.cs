@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System;
 using System.Numerics;
 using System.Linq;
+using System.Diagnostics;
 
 namespace JoinTheMilitary
 {
@@ -699,12 +700,382 @@ namespace JoinTheMilitary
 
                 Data = new List<string>() { "Nukes" }
             };
+            UIItem WikiMoneyOnWarGlobal = new UIItem()
+            {
+                Type = "Button",
+
+                Orientation = "Right",
+                X = -650,
+                Y = -250,
+                Width = 550,
+                Height = 100,
+                CentreX = -650 + (550 / 2),
+                CentreY = -250 + (100 / 2),
+
+                BorderWidth = 5,
+                BorderColor = Color.Black,
+                BaseColor = Color.Wheat,
+
+                Text = new TextElement()
+                {
+                    Elements = TextCharacter.GetString("MONEY SPENT ON WAR GLOBALLY"),
+                    ElementSize = 5,
+                    Color = Color.Black
+                },
+
+                Data = new List<string>() { "Money Global" }
+            };
+            UIItem WikiMoneyOnWarUS = new UIItem()
+            {
+                Type = "Button",
+
+                Orientation = "Right",
+                X = -650,
+                Y = 0,
+                Width = 550,
+                Height = 100,
+                CentreX = -650 + (550 / 2),
+                CentreY = 0 + (100 / 2),
+
+                BorderWidth = 5,
+                BorderColor = Color.Black,
+                BaseColor = Color.Wheat,
+
+                Text = new TextElement()
+                {
+                    Elements = TextCharacter.GetString("MONEY SPENT ON WAR IN THE US"),
+                    ElementSize = 5,
+                    Color = Color.Black
+                },
+
+                Data = new List<string>() { "Money US" }
+            };
+            UIItem WikiDeathsPerYear = new UIItem()
+            {
+                Type = "Button",
+
+                Orientation = "Right",
+                X = -650,
+                Y = 250,
+                Width = 550,
+                Height = 100,
+                CentreX = -650 + (550 / 2),
+                CentreY = 250 + (100 / 2),
+
+                BorderWidth = 5,
+                BorderColor = Color.Black,
+                BaseColor = Color.Wheat,
+
+                Text = new TextElement()
+                {
+                    Elements = TextCharacter.GetString("DEATH PER YEAR TO WAR"),
+                    ElementSize = 5,
+                    Color = Color.Black
+                },
+
+                Data = new List<string>() { "Deaths" }
+            };
 
             UIPages.Add(new UIPage()
             {
                 Type = "Wiki",
 
-                UIItems = new List<UIItem>() { UniQuit, UniHome, WikiMessage, WikiWarsFaught, WikiSoldiers, WikiNukes }
+                UIItems = new List<UIItem>() { UniQuit, UniHome, WikiMessage, WikiWarsFaught, WikiSoldiers, WikiNukes, WikiMoneyOnWarGlobal, WikiMoneyOnWarUS, WikiDeathsPerYear }
+            });
+
+            #endregion
+
+            #region Wiki SubPages
+
+            UIItem WikiReturn = new UIItem()
+            {
+                Type = "Button",
+
+                Orientation = "Centre",
+                X = -200,
+                Y = -300,
+                Width = 400,
+                Height = 100,
+            };
+
+            UIItem WarsMessage1 = new UIItem()
+            {
+                Type = "Text",
+
+                Orientation = "Centre",
+                X = 0,
+                Y = 0,
+                CentreX = 0,
+                CentreY = 0,
+
+                Text = new TextElement()
+                {
+                    Elements = TextCharacter.GetString("AS OF 13TH OF NOVEMBER 2023"),
+                    ElementSize = 10,
+                    Color = Color.Black,
+                }
+            };
+            UIItem WarsMessage2 = new UIItem()
+            {
+                Type = "Text",
+
+                Orientation = "Centre",
+                X = 0,
+                Y = 0,
+                CentreX = 0,
+                CentreY = 100,
+
+                Text = new TextElement()
+                {
+                    Elements = TextCharacter.GetString("THERE ARE 32 ONGOING WARS"),
+                    ElementSize = 12,
+                    Color = Color.Black,
+                }
+            };
+            UIPages.Add(new UIPage()
+            {
+                Type = "Wars",
+
+                UIItems = new List<UIItem>() { UniQuit, UniHome, WarsMessage1, WarsMessage2 }
+            });
+
+            UIItem SoldiersMessage1 = new UIItem()
+            {
+                Type = "Text",
+
+                Orientation = "Centre",
+                X = 0,
+                Y = 0,
+                CentreX = 0,
+                CentreY = 0,
+
+                Text = new TextElement()
+                {
+                    Elements = TextCharacter.GetString("AS RECORDED IN 2020"),
+                    ElementSize = 10,
+                    Color = Color.Black,
+                }
+            };
+            UIItem SoldiersMessage2 = new UIItem()
+            {
+                Type = "Text",
+
+                Orientation = "Centre",
+                X = 0,
+                Y = 0,
+                CentreX = 0,
+                CentreY = 100,
+
+                Text = new TextElement()
+                {
+                    Elements = TextCharacter.GetString("THE ARE ROUGHLY  27,406,000  ACTIVE SOLDIERS"),
+                    ElementSize = 10,
+                    Color = Color.Black,
+                }
+            };
+            UIPages.Add(new UIPage()
+            {
+                Type = "Soldiers",
+
+                UIItems = new List<UIItem>() { UniQuit, UniHome, SoldiersMessage1, SoldiersMessage2 }
+            });
+
+            UIItem NukesMessage1 = new UIItem()
+            {
+                Type = "Text",
+
+                Orientation = "Centre",
+                X = 0,
+                Y = 0,
+                CentreX = 0,
+                CentreY = 0,
+
+                Text = new TextElement()
+                {
+                    Elements = TextCharacter.GetString("AS OF JANUARY 2023"),
+                    ElementSize = 10,
+                    Color = Color.Black,
+                }
+            };
+            UIItem NukesMessage2 = new UIItem()
+            {
+                Type = "Text",
+
+                Orientation = "Centre",
+                X = 0,
+                Y = 0,
+                CentreX = 0,
+                CentreY = 100,
+
+                Text = new TextElement()
+                {
+                    Elements = TextCharacter.GetString("THERE ARE APPROXIMATLY  12,500  NUKES IN EXISTENCE"),
+                    ElementSize = 10,
+                    Color = Color.Black,
+                }
+            };
+            UIPages.Add(new UIPage()
+            {
+                Type = "Nukes",
+
+                UIItems = new List<UIItem>() { UniQuit, UniHome, NukesMessage1, NukesMessage2 }
+            });
+
+            UIItem MoneyGlobalMessage1 = new UIItem()
+            {
+                Type = "Text",
+
+                Orientation = "Centre",
+                X = 0,
+                Y = 0,
+                CentreX = 0,
+                CentreY = 0,
+
+                Text = new TextElement()
+                {
+                    Elements = TextCharacter.GetString("AS RECORDED IN 2022"),
+                    ElementSize = 10,
+                    Color = Color.Black,
+                }
+            };
+            UIItem MoneyGlobalMessage2 = new UIItem()
+            {
+                Type = "Text",
+
+                Orientation = "Centre",
+                X = 0,
+                Y = 0,
+                CentreX = 0,
+                CentreY = 100,
+
+                Text = new TextElement()
+                {
+                    Elements = TextCharacter.GetString("THE APROXIMATE NUMBER OF US DOLLARS SPENT ON WAR GLOBALLY"),
+                    ElementSize = 10,
+                    Color = Color.Black,
+                }
+            };
+            UIItem MoneyGlobalMessage3 = new UIItem()
+            {
+                Type = "Text",
+
+                Orientation = "Centre",
+                X = 0,
+                Y = 0,
+                CentreX = 0,
+                CentreY = 200,
+
+                Text = new TextElement()
+                {
+                    Elements = TextCharacter.GetString("REACHED  2.24  TRILLION"),
+                    ElementSize = 10,
+                    Color = Color.Black,
+                }
+            };
+            UIPages.Add(new UIPage()
+            {
+                Type = "Money Global",
+
+                UIItems = new List<UIItem>() { UniQuit, UniHome, MoneyGlobalMessage1, MoneyGlobalMessage2, MoneyGlobalMessage3 }
+            });
+
+            UIItem MoneyUSMessage1 = new UIItem()
+            {
+                Type = "Text",
+
+                Orientation = "Centre",
+                X = 0,
+                Y = 0,
+                CentreX = 0,
+                CentreY = 0,
+
+                Text = new TextElement()
+                {
+                    Elements = TextCharacter.GetString("AS RECORDED IN 2022"),
+                    ElementSize = 10,
+                    Color = Color.Black,
+                }
+            };
+            UIItem MoneyUSMessage2 = new UIItem()
+            {
+                Type = "Text",
+
+                Orientation = "Centre",
+                X = 0,
+                Y = 0,
+                CentreX = 0,
+                CentreY = 100,
+
+                Text = new TextElement()
+                {
+                    Elements = TextCharacter.GetString("THE APROXIMATE NUMBER OF DOLLARS SPENT ON WAR IN THE US"),
+                    ElementSize = 10,
+                    Color = Color.Black,
+                }
+            };
+            UIItem MoneyUSMessage3 = new UIItem()
+            {
+                Type = "Text",
+
+                Orientation = "Centre",
+                X = 0,
+                Y = 0,
+                CentreX = 0,
+                CentreY = 200,
+
+                Text = new TextElement()
+                {
+                    Elements = TextCharacter.GetString("REACHED  844  BILLION"),
+                    ElementSize = 10,
+                    Color = Color.Black,
+                }
+            };
+            UIPages.Add(new UIPage()
+            {
+                Type = "Money US",
+
+                UIItems = new List<UIItem>() { UniQuit, UniHome, MoneyUSMessage1, MoneyUSMessage2, MoneyUSMessage3 }
+            });
+
+            UIItem DeathsMessage1 = new UIItem()
+            {
+                Type = "Text",
+
+                Orientation = "Centre",
+                X = 0,
+                Y = 0,
+                CentreX = 0,
+                CentreY = 0,
+
+                Text = new TextElement()
+                {
+                    Elements = TextCharacter.GetString("SINCE THE YEAR 2001"),
+                    ElementSize = 10,
+                    Color = Color.Black,
+                }
+            };
+            UIItem DeathsMessage2 = new UIItem()
+            {
+                Type = "Text",
+
+                Orientation = "Centre",
+                X = 0,
+                Y = 0,
+                CentreX = 0,
+                CentreY = 100,
+
+                Text = new TextElement()
+                {
+                    Elements = TextCharacter.GetString("ATLEAST  432,000  CIVILIANS HAVE DIED IN WARS"),
+                    ElementSize = 10,
+                    Color = Color.Black,
+                }
+            };
+            UIPages.Add(new UIPage()
+            {
+                Type = "Deaths",
+
+                UIItems = new List<UIItem>() { UniQuit, UniHome, DeathsMessage1, DeathsMessage2 }
             });
 
             #endregion
@@ -920,6 +1291,12 @@ namespace JoinTheMilitary
                     {
                         UIPage_Current = page;
                     }
+                    else
+                    {
+                        Debug.WriteLine(page.Type);
+                        Debug.WriteLine(PageType);
+                        Debug.WriteLine("\n");
+                    }
                 }
             }
         }
@@ -1134,6 +1511,30 @@ namespace JoinTheMilitary
                 else if (Data.Contains("Wiki"))
                 {
                     UI_ChangePage("Wiki");
+                }
+                else if (Data.Contains("Wars"))
+                {
+                    UI_ChangePage("Wars");
+                }
+                else if (Data.Contains("Soldiers"))
+                {
+                    UI_ChangePage("Soldiers");
+                }
+                else if (Data.Contains("Money Global"))
+                {
+                    UI_ChangePage("Money Global");
+                }
+                else if (Data.Contains("Money US"))
+                {
+                    UI_ChangePage("Money US");
+                }
+                else if (Data.Contains("Deaths"))
+                {
+                    UI_ChangePage("Deaths");
+                }
+                else if (Data.Contains("Nukes"))
+                {
+                    UI_ChangePage("Nukes");
                 }
             }
         }
