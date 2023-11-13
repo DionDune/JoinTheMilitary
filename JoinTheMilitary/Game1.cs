@@ -128,7 +128,7 @@ namespace JoinTheMilitary
                     Color = Color.White
                 },
 
-                Data = new List<string>() { "Home" }
+                Data = new List<string>() { "Info Continue" }
             };
 
             #region Start Page
@@ -791,11 +791,26 @@ namespace JoinTheMilitary
             {
                 Type = "Button",
 
-                Orientation = "Centre",
+                Orientation = "Top",
                 X = -200,
-                Y = -300,
+                Y = 50,
                 Width = 400,
                 Height = 100,
+                CentreX = -200 + (400 / 2),
+                CentreY = 50 + (100 / 2),
+
+                BorderWidth = 5,
+                BorderColor = Color.Black,
+                BaseColor = Color.Turquoise,
+
+                Text = new TextElement()
+                {
+                    Elements = TextCharacter.GetString("RETURN TO WIKI"),
+                    ElementSize = 5,
+                    Color = Color.White
+                },
+
+                Data = new List<string>() { "Wiki" }
             };
 
             UIItem WarsMessage1 = new UIItem()
@@ -836,7 +851,7 @@ namespace JoinTheMilitary
             {
                 Type = "Wars",
 
-                UIItems = new List<UIItem>() { UniQuit, UniHome, WarsMessage1, WarsMessage2 }
+                UIItems = new List<UIItem>() { UniQuit, UniHome, WikiReturn, WarsMessage1, WarsMessage2 }
             });
 
             UIItem SoldiersMessage1 = new UIItem()
@@ -877,7 +892,7 @@ namespace JoinTheMilitary
             {
                 Type = "Soldiers",
 
-                UIItems = new List<UIItem>() { UniQuit, UniHome, SoldiersMessage1, SoldiersMessage2 }
+                UIItems = new List<UIItem>() { UniQuit, UniHome, WikiReturn, SoldiersMessage1, SoldiersMessage2 }
             });
 
             UIItem NukesMessage1 = new UIItem()
@@ -918,7 +933,7 @@ namespace JoinTheMilitary
             {
                 Type = "Nukes",
 
-                UIItems = new List<UIItem>() { UniQuit, UniHome, NukesMessage1, NukesMessage2 }
+                UIItems = new List<UIItem>() { UniQuit, UniHome, WikiReturn, NukesMessage1, NukesMessage2 }
             });
 
             UIItem MoneyGlobalMessage1 = new UIItem()
@@ -976,7 +991,7 @@ namespace JoinTheMilitary
             {
                 Type = "Money Global",
 
-                UIItems = new List<UIItem>() { UniQuit, UniHome, MoneyGlobalMessage1, MoneyGlobalMessage2, MoneyGlobalMessage3 }
+                UIItems = new List<UIItem>() { UniQuit, UniHome, WikiReturn, MoneyGlobalMessage1, MoneyGlobalMessage2, MoneyGlobalMessage3 }
             });
 
             UIItem MoneyUSMessage1 = new UIItem()
@@ -1034,7 +1049,7 @@ namespace JoinTheMilitary
             {
                 Type = "Money US",
 
-                UIItems = new List<UIItem>() { UniQuit, UniHome, MoneyUSMessage1, MoneyUSMessage2, MoneyUSMessage3 }
+                UIItems = new List<UIItem>() { UniQuit, UniHome, WikiReturn, MoneyUSMessage1, MoneyUSMessage2, MoneyUSMessage3 }
             });
 
             UIItem DeathsMessage1 = new UIItem()
@@ -1075,7 +1090,7 @@ namespace JoinTheMilitary
             {
                 Type = "Deaths",
 
-                UIItems = new List<UIItem>() { UniQuit, UniHome, DeathsMessage1, DeathsMessage2 }
+                UIItems = new List<UIItem>() { UniQuit, UniHome, WikiReturn, DeathsMessage1, DeathsMessage2 }
             });
 
             #endregion
