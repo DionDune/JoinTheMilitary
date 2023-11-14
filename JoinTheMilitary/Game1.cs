@@ -632,9 +632,9 @@ namespace JoinTheMilitary
                 Orientation = "Left",
                 X = 100,
                 Y = -250,
-                Width = 550,
+                Width = 570,
                 Height = 100,
-                CentreX = 100 + (550 / 2),
+                CentreX = 100 + (570 / 2),
                 CentreY = -250 + (100 / 2),
 
                 BorderWidth = 5,
@@ -657,9 +657,9 @@ namespace JoinTheMilitary
                 Orientation = "Left",
                 X = 100,
                 Y = 0,
-                Width = 550,
+                Width = 570,
                 Height = 100,
-                CentreX = 100 + (550 / 2),
+                CentreX = 100 + (570 / 2),
                 CentreY = 0 + (100 / 2),
 
                 BorderWidth = 5,
@@ -682,9 +682,9 @@ namespace JoinTheMilitary
                 Orientation = "Left",
                 X = 100,
                 Y = 250,
-                Width = 550,
+                Width = 570,
                 Height = 100,
-                CentreX = 100 + (550 / 2),
+                CentreX = 100 + (570 / 2),
                 CentreY = 250 + (100 / 2),
 
                 BorderWidth = 5,
@@ -707,9 +707,9 @@ namespace JoinTheMilitary
                 Orientation = "Right",
                 X = -650,
                 Y = -250,
-                Width = 550,
+                Width = 570,
                 Height = 100,
-                CentreX = -650 + (550 / 2),
+                CentreX = -650 + (570 / 2),
                 CentreY = -250 + (100 / 2),
 
                 BorderWidth = 5,
@@ -732,9 +732,9 @@ namespace JoinTheMilitary
                 Orientation = "Right",
                 X = -650,
                 Y = 0,
-                Width = 550,
+                Width = 570,
                 Height = 100,
-                CentreX = -650 + (550 / 2),
+                CentreX = -650 + (570 / 2),
                 CentreY = 0 + (100 / 2),
 
                 BorderWidth = 5,
@@ -757,9 +757,9 @@ namespace JoinTheMilitary
                 Orientation = "Right",
                 X = -650,
                 Y = 250,
-                Width = 550,
+                Width = 570,
                 Height = 100,
-                CentreX = -650 + (550 / 2),
+                CentreX = -650 + (570 / 2),
                 CentreY = 250 + (100 / 2),
 
                 BorderWidth = 5,
@@ -768,8 +768,8 @@ namespace JoinTheMilitary
 
                 Text = new TextElement()
                 {
-                    Elements = TextCharacter.GetString("DEATH PER YEAR TO WAR"),
-                    ElementSize = 5,
+                    Elements = TextCharacter.GetString("CIVILIAN DEATHS THIS CENTURY"),
+                    ElementSize = 5,                                        
                     Color = Color.Black
                 },
 
