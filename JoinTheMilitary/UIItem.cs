@@ -43,7 +43,8 @@ namespace JoinTheMilitary
 
         public List<string> Data { get; set; }
         public List<int> NumericalData { get; set; }
-
+        public UIPage TargetPage { get; set; }
+        
 
         public int FillDirection { get; set; }
 
@@ -88,6 +89,7 @@ namespace JoinTheMilitary
 
             Data = null;
             NumericalData = null;
+            TargetPage = null;
 
 
             Text = null;
