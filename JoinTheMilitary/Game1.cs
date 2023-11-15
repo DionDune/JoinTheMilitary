@@ -129,468 +129,467 @@ namespace JoinTheMilitary
                 Data = new List<string>() { "Info Continue" }
             };
 
-            #region Start Page
 
-            //Enlist Button
-            UIItem StartButton = new UIItem()
-            {
-                Type = "Button",
-
-                X = -200,
-                Y = -75,
-
-                Width = 400,
-                Height = 150,
-
-                CentreX = -200 + (400 / 2),
-                CentreY = -75 + (150 / 2),
-
-                BorderWidth = 5,
-                BorderColor = Color.Green,
-                BaseColor = Color.PaleGreen,
-
-                Text = new TextElement()
-                {
-                    Text = "ENLIST",
-                    Elements = TextCharacter.GetString("ENLIST"),
-                    ElementSize = 8,
-                    Color = Color.Black
-                },
-
-                Data = new List<string>() { "ENLIST" }
-            };
-            //Start Quit Button
-            UIItem StartQuitButton = new UIItem()
-            {
-                Type = "Button",
-
-                X = -200,
-                Y = -75 + 175,
-
-                Width = 400,
-                Height = 150,
-
-                CentreX = -200 + (400 / 2),
-                CentreY = 100 + (150 / 2),
-
-                BorderWidth = 5,
-                BorderColor = Color.DarkRed,
-                BaseColor = Color.Red,
-
-                Text = new TextElement()
-                {
-                    Text = "QUIT",
-                    Elements = TextCharacter.GetString("QUIT"),
-                    ElementSize = 8,
-                    Color = Color.Black
-                },
-
-                Data = new List<string>() { "Quit" }
-            };
-            //Start Message
-            UIItem StartMessage = new UIItem()
-            {
-                Type = "Text",
-                X = 0,
-                Y = -200,
-                CentreX = 0,
-                CentreY = -200,
-
-                Text = new TextElement()
-                {
-                    Text = "WELCOME TO THE MILITARY!!!",
-                    Elements = TextCharacter.GetString("WELCOME TO THE MILITARY!!!"),
-                    ElementSize = 12,
-                    Color = Color.Black
-                },
-            };
-
+            //      Main Pages
             //Start Page
             UIPages.Add(new UIPage()
             {
                 Type = "Start",
 
-                UIItems = new List<UIItem>() { StartButton, StartQuitButton, StartMessage }
+                UIItems = new List<UIItem>()
+                {
+                    //Start Button
+                    new UIItem()
+                    {
+                        Type = "Button",
+
+                        X = -200,
+                        Y = -75,
+                        Width = 400,
+                        Height = 150,
+                        CentreX = -200 + (400 / 2),
+                        CentreY = -75 + (150 / 2),
+
+                        BorderWidth = 5,
+                        BorderColor = Color.Green,
+                        BaseColor = Color.PaleGreen,
+
+                        Text = new TextElement()
+                        {
+                            Text = "ENLIST",
+                            Elements = TextCharacter.GetString("ENLIST"),
+                            ElementSize = 8,
+                            Color = Color.Black
+                        },
+
+                        Data = new List<string>() { "ENLIST" }
+                    },
+                    //Quit Button
+                    new UIItem()
+                    {
+                        Type = "Button",
+
+                        X = -200,
+                        Y = -75 + 175,
+
+                        Width = 400,
+                        Height = 150,
+
+                        CentreX = -200 + (400 / 2),
+                        CentreY = 100 + (150 / 2),
+
+                        BorderWidth = 5,
+                        BorderColor = Color.DarkRed,
+                        BaseColor = Color.Red,
+
+                        Text = new TextElement()
+                        {
+                            Text = "QUIT",
+                            Elements = TextCharacter.GetString("QUIT"),
+                            ElementSize = 8,
+                            Color = Color.Black
+                        },
+
+                        Data = new List<string>() { "Quit" }
+                    },
+                    //Start Message
+                    new UIItem()
+                    {
+                        Type = "Text",
+                        X = 0,
+                        Y = -200,
+                        CentreX = 0,
+                        CentreY = -200,
+
+                        Text = new TextElement()
+                        {
+                            Text = "WELCOME TO THE MILITARY!!!",
+                            Elements = TextCharacter.GetString("WELCOME TO THE MILITARY!!!"),
+                            ElementSize = 12,
+                            Color = Color.Black
+                        }
+                    }
+                }
             });
-
-            #endregion
-
-            #region Information Page
-
-            //Information Message
-            UIItem InfoMessage1 = new UIItem()
-            {
-                Type = "Text",
-
-                X = 0,
-                Y = 0,
-                CentreX = 0,
-                CentreY = -400,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("OURS IS NOT TO REASON WHY"),
-                    ElementSize = 12,
-                    Color = Color.Black
-                },
-            };
-            UIItem InfoMessage2 = new UIItem()
-            {
-                Type = "Text",
-
-                X = 0,
-                Y = 0,
-                CentreX = 0,
-                CentreY = -300,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("OURS IS BUT TO DO AND DIE"),
-                    ElementSize = 12,
-                    Color = Color.Black
-                },
-            };
-            UIItem InfoMessage3 = new UIItem()
-            {
-                Type = "Text",
-
-                X = 0,
-                Y = 0,
-                CentreX = 0,
-                CentreY = -150,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("ARE YOU PREPARED TO DIE FOR YOUR STATE?"),
-                    ElementSize = 9,
-                    Color = Color.Red
-                },
-            };
-
-            UIItem InfoContinue = new UIItem()
-            {
-                Type = "Button",
-
-                X = -200,
-                Y = 0,
-
-                Width = 300,
-                Height = 100,
-
-                CentreX = -200 + (300 / 2),
-                CentreY = 0 + (100 / 2),
-
-                BorderWidth = 5,
-                BorderColor = Color.DarkGreen,
-                BaseColor = Color.Green,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("YES!"),
-                    ElementSize = 8,
-                    Color = Color.Black
-                },
-
-                Data = new List<string>() { "Info Continue" }
-            };
-            UIItem InfoQuitButton = new UIItem()
-            {
-                Type = "Button",
-
-                X = -200,
-                Y = 120,
-
-                Width = 300,
-                Height = 100,
-
-                CentreX = -200 + (300 / 2),
-                CentreY = 120 + (100 / 2),
-
-                BorderWidth = 5,
-                BorderColor = Color.DarkRed,
-                BaseColor = Color.Red,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("NO"),
-                    ElementSize = 8,
-                    Color = Color.Black
-                },
-
-                Data = new List<string>() { "Quit" }
-            };
-
             //Information Page
             UIPages.Add(new UIPage()
             {
                 Type = "Information",
 
-                UIItems = new List<UIItem>() { UniQuit, UniHome, InfoMessage1, InfoMessage2, InfoMessage3, InfoContinue, InfoQuitButton }
+                UIItems = new List<UIItem>()
+                {
+                    UniQuit, UniHome,
+
+                    //Messages
+                    new UIItem()
+                    {
+                        Type = "Text",
+
+                        X = 0,
+                        Y = 0,
+                        CentreX = 0,
+                        CentreY = -400,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("OURS IS NOT TO REASON WHY"),
+                            ElementSize = 12,
+                            Color = Color.Black
+                        }
+                    },
+                    new UIItem()
+                    {
+                        Type = "Text",
+
+                        X = 0,
+                        Y = 0,
+                        CentreX = 0,
+                        CentreY = -300,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("OURS IS BUT TO DO AND DIE"),
+                            ElementSize = 12,
+                            Color = Color.Black
+                        }
+                    },
+                    new UIItem()
+                    {
+                        Type = "Text",
+
+                        X = 0,
+                        Y = 0,
+                        CentreX = 0,
+                        CentreY = -150,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("ARE YOU PREPARED TO DIE FOR YOUR STATE?"),
+                            ElementSize = 9,
+                            Color = Color.Red
+                        }
+                    },
+
+                    //Continue
+                    new UIItem()
+                    {
+                        Type = "Button",
+
+                        X = -200,
+                        Y = 0,
+                        Width = 300,
+                        Height = 100,
+                        CentreX = -200 + (300 / 2),
+                        CentreY = 0 + (100 / 2),
+
+                        BorderWidth = 5,
+                        BorderColor = Color.DarkGreen,
+                        BaseColor = Color.Green,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("YES!"),
+                            ElementSize = 8,
+                            Color = Color.Black
+                        },
+
+                        Data = new List<string>() { "Info Continue" }
+                    },
+                    //Quit
+                    new UIItem()
+                    {
+                        Type = "Button",
+
+                        X = -200,
+                        Y = 120,
+
+                        Width = 300,
+                        Height = 100,
+
+                        CentreX = -200 + (300 / 2),
+                        CentreY = 120 + (100 / 2),
+
+                        BorderWidth = 5,
+                        BorderColor = Color.DarkRed,
+                        BaseColor = Color.Red,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("NO"),
+                            ElementSize = 8,
+                            Color = Color.Black
+                        },
+
+                        Data = new List<string>() { "Quit" }
+                    }
+                }
             });
-
-            #endregion
-
-            #region Game Select Page
-
-            UIItem GameSelectDivider = new UIItem()
-            {
-                Type = "Square Shape",
-
-                Orientation = "Top",
-                X = -10,
-                Y = 0,
-                Width = 20,
-                Height = _graphics.PreferredBackBufferHeight * 4,
-
-                BorderWidth = 4,
-                BorderColor = Color.Black,
-                BaseColor = Color.Wheat
-            };
-            UIItem QuizSelect = new UIItem()
-            {
-                Type = "Button",
-
-                Orientation = "Top Left",
-                X = 250,
-                Y = 100,
-
-                Width = 400,
-                Height = 100,
-
-                CentreX = 250 + (400 / 2),
-                CentreY = 100 + (100 / 2),
-
-                BorderWidth = 5,
-                BorderColor = Color.Black,
-                BaseColor = Color.Wheat,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("KNOWLEDGE TEST"),
-                    ElementSize = 6,
-                    Color = Color.Black
-                },
-
-                Data = new List<string>() { "Knowledge Test" }
-            };
-            UIItem WikiSelect = new UIItem()
-            {
-                Type = "Button",
-
-                Orientation = "Top Right",
-                X = -650,
-                Y = 100,
-
-                Width = 400,
-                Height = 100,
-
-                CentreX = -650 + (400 / 2),
-                CentreY = 100 + (100 / 2),
-
-                BorderWidth = 5,
-                BorderColor = Color.Black,
-                BaseColor = Color.Wheat,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("INFORMATION"),
-                    ElementSize = 7,
-                    Color = Color.Black
-                },
-
-                Data = new List<string>() { "Wiki" }
-            };
-
+            //Game Select Page
             UIPages.Add(new UIPage()
             {
                 Type = "Game Select",
 
-                UIItems = new List<UIItem>() { UniQuit, UniHome, QuizSelect, WikiSelect, GameSelectDivider }
-            });
-
-            #endregion
-
-            #region Wiki Page
-
-            UIItem WikiMessage = new UIItem()
-            {
-                Type = "Text",
-
-                Orientation = "Top",
-                X = 0,
-                Y = 0,
-                CentreX = 0,
-                CentreY = 80,
-
-                Text = new TextElement()
+                UIItems = new List<UIItem>()
                 {
-                    Elements = TextCharacter.GetString("MILITARY WIKI"),
-                    ElementSize = 14,
-                    Color = Color.Black
+                    UniQuit, UniHome,
+
+                    //Divider
+                    new UIItem()
+                    {
+                        Type = "Square Shape",
+
+                        Orientation = "Top",
+                        X = -10,
+                        Y = 0,
+                        Width = 20,
+                        Height = _graphics.PreferredBackBufferHeight * 4,
+
+                        BorderWidth = 4,
+                        BorderColor = Color.Black,
+                        BaseColor = Color.Wheat
+                    },
+                    //Quiz Select
+                    new UIItem()
+                    {
+                        Type = "Button",
+
+                        Orientation = "Top Left",
+                        X = 250,
+                        Y = 100,
+                        Width = 400,
+                        Height = 100,
+                        CentreX = 250 + (400 / 2),
+                        CentreY = 100 + (100 / 2),
+
+                        BorderWidth = 5,
+                        BorderColor = Color.Black,
+                        BaseColor = Color.Wheat,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("KNOWLEDGE TEST"),
+                            ElementSize = 6,
+                            Color = Color.Black
+                        },
+
+                        Data = new List<string>() { "Knowledge Test" }
+                    },
+                    //Wiki Select
+                    new UIItem()
+                    {
+                        Type = "Button",
+
+                        Orientation = "Top Right",
+                        X = -650,
+                        Y = 100,
+                        Width = 400,
+                        Height = 100,
+                        CentreX = -650 + (400 / 2),
+                        CentreY = 100 + (100 / 2),
+
+                        BorderWidth = 5,
+                        BorderColor = Color.Black,
+                        BaseColor = Color.Wheat,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("INFORMATION"),
+                            ElementSize = 7,
+                            Color = Color.Black
+                        },
+
+                        Data = new List<string>() { "Wiki" }
+                    }
                 }
-            };
-            UIItem WikiWarsFaught = new UIItem()
-            {
-                Type = "Button",
-
-                Orientation = "Left",
-                X = 100,
-                Y = -250,
-                Width = 570,
-                Height = 100,
-                CentreX = 100 + (570 / 2),
-                CentreY = -250 + (100 / 2),
-
-                BorderWidth = 5,
-                BorderColor = Color.Black,
-                BaseColor = Color.Wheat,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("NUMBER OF WARS RIGHT NOW"),
-                    ElementSize = 5,
-                    Color = Color.Black
-                },
-
-                Data = new List<string>() { "Wars" }
-            };
-            UIItem WikiSoldiers = new UIItem()
-            {
-                Type = "Button",
-
-                Orientation = "Left",
-                X = 100,
-                Y = 0,
-                Width = 570,
-                Height = 100,
-                CentreX = 100 + (570 / 2),
-                CentreY = 0 + (100 / 2),
-
-                BorderWidth = 5,
-                BorderColor = Color.Black,
-                BaseColor = Color.Wheat,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("NUMBER OF SOLDIERS RIGHT NOW"),
-                    ElementSize = 5,
-                    Color = Color.Black
-                },
-
-                Data = new List<string>() { "Soldiers" }
-            };
-            UIItem WikiNukes = new UIItem()
-            {
-                Type = "Button",
-
-                Orientation = "Left",
-                X = 100,
-                Y = 250,
-                Width = 570,
-                Height = 100,
-                CentreX = 100 + (570 / 2),
-                CentreY = 250 + (100 / 2),
-
-                BorderWidth = 5,
-                BorderColor = Color.Black,
-                BaseColor = Color.Wheat,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("NUMBER OF NUKES RIGHT NOW"),
-                    ElementSize = 5,
-                    Color = Color.Black
-                },
-
-                Data = new List<string>() { "Nukes" }
-            };
-            UIItem WikiMoneyOnWarGlobal = new UIItem()
-            {
-                Type = "Button",
-
-                Orientation = "Right",
-                X = -650,
-                Y = -250,
-                Width = 570,
-                Height = 100,
-                CentreX = -650 + (570 / 2),
-                CentreY = -250 + (100 / 2),
-
-                BorderWidth = 5,
-                BorderColor = Color.Black,
-                BaseColor = Color.Wheat,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("MONEY SPENT ON WAR GLOBALLY"),
-                    ElementSize = 5,
-                    Color = Color.Black
-                },
-
-                Data = new List<string>() { "Money Global" }
-            };
-            UIItem WikiMoneyOnWarUS = new UIItem()
-            {
-                Type = "Button",
-
-                Orientation = "Right",
-                X = -650,
-                Y = 0,
-                Width = 570,
-                Height = 100,
-                CentreX = -650 + (570 / 2),
-                CentreY = 0 + (100 / 2),
-
-                BorderWidth = 5,
-                BorderColor = Color.Black,
-                BaseColor = Color.Wheat,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("MONEY SPENT ON WAR IN THE US"),
-                    ElementSize = 5,
-                    Color = Color.Black
-                },
-
-                Data = new List<string>() { "Money US" }
-            };
-            UIItem WikiDeathsPerYear = new UIItem()
-            {
-                Type = "Button",
-
-                Orientation = "Right",
-                X = -650,
-                Y = 250,
-                Width = 570,
-                Height = 100,
-                CentreX = -650 + (570 / 2),
-                CentreY = 250 + (100 / 2),
-
-                BorderWidth = 5,
-                BorderColor = Color.Black,
-                BaseColor = Color.Wheat,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("CIVILIAN DEATHS THIS CENTURY"),
-                    ElementSize = 5,                                        
-                    Color = Color.Black
-                },
-
-                Data = new List<string>() { "Deaths" }
-            };
-
+            });
+            //Wiki Main Page
             UIPages.Add(new UIPage()
             {
                 Type = "Wiki",
 
-                UIItems = new List<UIItem>() { UniQuit, UniHome, WikiMessage, WikiWarsFaught, WikiSoldiers, WikiNukes, WikiMoneyOnWarGlobal, WikiMoneyOnWarUS, WikiDeathsPerYear }
+                UIItems = new List<UIItem>()
+                {
+                    UniQuit, UniHome,
+
+                    //Message
+                    new UIItem()
+                    {
+                        Type = "Text",
+
+                        Orientation = "Top",
+                        X = 0,
+                        Y = 0,
+                        CentreX = 0,
+                        CentreY = 80,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("MILITARY WIKI"),
+                            ElementSize = 14,
+                            Color = Color.Black
+                        }
+                    },
+                    //Wars Fought Button
+                    new UIItem()
+                    {
+                        Type = "Button",
+
+                        Orientation = "Left",
+                        X = 100,
+                        Y = -250,
+                        Width = 570,
+                        Height = 100,
+                        CentreX = 100 + (570 / 2),
+                        CentreY = -250 + (100 / 2),
+
+                        BorderWidth = 5,
+                        BorderColor = Color.Black,
+                        BaseColor = Color.Wheat,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("NUMBER OF WARS RIGHT NOW"),
+                            ElementSize = 5,
+                            Color = Color.Black
+                        },
+
+                        Data = new List<string>() { "Wars" }
+                    },
+                    //Soldiers Button
+                    new UIItem()
+                    {
+                        Type = "Button",
+
+                        Orientation = "Left",
+                        X = 100,
+                        Y = 0,
+                        Width = 570,
+                        Height = 100,
+                        CentreX = 100 + (570 / 2),
+                        CentreY = 0 + (100 / 2),
+
+                        BorderWidth = 5,
+                        BorderColor = Color.Black,
+                        BaseColor = Color.Wheat,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("NUMBER OF SOLDIERS RIGHT NOW"),
+                            ElementSize = 5,
+                            Color = Color.Black
+                        },
+
+                        Data = new List<string>() { "Soldiers" }
+                    },
+                    //Nukes Button
+                    new UIItem()
+                    {
+                        Type = "Button",
+
+                        Orientation = "Left",
+                        X = 100,
+                        Y = 250,
+                        Width = 570,
+                        Height = 100,
+                        CentreX = 100 + (570 / 2),
+                        CentreY = 250 + (100 / 2),
+
+                        BorderWidth = 5,
+                        BorderColor = Color.Black,
+                        BaseColor = Color.Wheat,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("NUMBER OF NUKES RIGHT NOW"),
+                            ElementSize = 5,
+                            Color = Color.Black
+                        },
+
+                        Data = new List<string>() { "Nukes" }
+                    },
+                    //Global Expenditure Button
+                    new UIItem()
+                    {
+                        Type = "Button",
+
+                        Orientation = "Right",
+                        X = -650,
+                        Y = -250,
+                        Width = 570,
+                        Height = 100,
+                        CentreX = -650 + (570 / 2),
+                        CentreY = -250 + (100 / 2),
+
+                        BorderWidth = 5,
+                        BorderColor = Color.Black,
+                        BaseColor = Color.Wheat,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("MONEY SPENT ON WAR GLOBALLY"),
+                            ElementSize = 5,
+                            Color = Color.Black
+                        },
+
+                        Data = new List<string>() { "Money Global" }
+                    },
+                    //U.S. Expenditure Button
+                    new UIItem()
+                    {
+                        Type = "Button",
+
+                        Orientation = "Right",
+                        X = -650,
+                        Y = 0,
+                        Width = 570,
+                        Height = 100,
+                        CentreX = -650 + (570 / 2),
+                        CentreY = 0 + (100 / 2),
+
+                        BorderWidth = 5,
+                        BorderColor = Color.Black,
+                        BaseColor = Color.Wheat,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("MONEY SPENT ON WAR IN THE US"),
+                            ElementSize = 5,
+                            Color = Color.Black
+                        },
+
+                        Data = new List<string>() { "Money US" }
+                    },
+                    //Civilian Deaths Button
+                    new UIItem()
+                    {
+                        Type = "Button",
+
+                        Orientation = "Right",
+                        X = -650,
+                        Y = 250,
+                        Width = 570,
+                        Height = 100,
+                        CentreX = -650 + (570 / 2),
+                        CentreY = 250 + (100 / 2),
+
+                        BorderWidth = 5,
+                        BorderColor = Color.Black,
+                        BaseColor = Color.Wheat,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("CIVILIAN DEATHS THIS CENTURY"),
+                            ElementSize = 5,
+                            Color = Color.Black
+                        },
+
+                        Data = new List<string>() { "Deaths" }
+                    }
+                }
             });
 
-            #endregion
 
-            #region Wiki SubPages
-
+            //      Wiki Sub Pages
             UIItem WikiReturn = new UIItem()
             {
                 Type = "Button",
@@ -616,288 +615,316 @@ namespace JoinTheMilitary
 
                 Data = new List<string>() { "Wiki" }
             };
-
-            UIItem WarsMessage1 = new UIItem()
-            {
-                Type = "Text",
-
-                Orientation = "Centre",
-                X = 0,
-                Y = 0,
-                CentreX = 0,
-                CentreY = 0,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("AS OF 13TH OF NOVEMBER 2023"),
-                    ElementSize = 10,
-                    Color = Color.Black,
-                }
-            };
-            UIItem WarsMessage2 = new UIItem()
-            {
-                Type = "Text",
-
-                Orientation = "Centre",
-                X = 0,
-                Y = 0,
-                CentreX = 0,
-                CentreY = 100,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("THERE ARE 32 ONGOING WARS"),
-                    ElementSize = 12,
-                    Color = Color.Black,
-                }
-            };
+            //Wars Page
             UIPages.Add(new UIPage()
             {
                 Type = "Wars",
 
-                UIItems = new List<UIItem>() { UniQuit, UniHome, WikiReturn, WarsMessage1, WarsMessage2 }
+                UIItems = new List<UIItem>()
+                {
+                    UniQuit, UniHome, WikiReturn,
+
+                    //Messages
+                    new UIItem()
+                    {
+                        Type = "Text",
+
+                        Orientation = "Centre",
+                        X = 0,
+                        Y = 0,
+                        CentreX = 0,
+                        CentreY = 0,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("AS OF 13TH OF NOVEMBER 2023"),
+                            ElementSize = 10,
+                            Color = Color.Black,
+                        }
+                    },
+                    new UIItem()
+                    {
+                        Type = "Text",
+
+                        Orientation = "Centre",
+                        X = 0,
+                        Y = 0,
+                        CentreX = 0,
+                        CentreY = 100,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("THERE ARE 32 ONGOING WARS"),
+                            ElementSize = 12,
+                            Color = Color.Black,
+                        }
+                    }
+                }
             });
-
-            UIItem SoldiersMessage1 = new UIItem()
-            {
-                Type = "Text",
-
-                Orientation = "Centre",
-                X = 0,
-                Y = 0,
-                CentreX = 0,
-                CentreY = 0,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("AS RECORDED IN 2020"),
-                    ElementSize = 10,
-                    Color = Color.Black,
-                }
-            };
-            UIItem SoldiersMessage2 = new UIItem()
-            {
-                Type = "Text",
-
-                Orientation = "Centre",
-                X = 0,
-                Y = 0,
-                CentreX = 0,
-                CentreY = 100,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("THE ARE ROUGHLY  27,406,000  ACTIVE SOLDIERS"),
-                    ElementSize = 10,
-                    Color = Color.Black,
-                }
-            };
+            //Soldiers Page
             UIPages.Add(new UIPage()
             {
                 Type = "Soldiers",
 
-                UIItems = new List<UIItem>() { UniQuit, UniHome, WikiReturn, SoldiersMessage1, SoldiersMessage2 }
+                UIItems = new List<UIItem>()
+                {
+                    UniQuit, UniHome, WikiReturn,
+
+                    //Messages
+                    new UIItem()
+                    {
+                        Type = "Text",
+
+                        Orientation = "Centre",
+                        X = 0,
+                        Y = 0,
+                        CentreX = 0,
+                        CentreY = 0,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("AS RECORDED IN 2020"),
+                            ElementSize = 10,
+                            Color = Color.Black,
+                        }
+                    },
+                    new UIItem()
+                    {
+                        Type = "Text",
+
+                        Orientation = "Centre",
+                        X = 0,
+                        Y = 0,
+                        CentreX = 0,
+                        CentreY = 100,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("THE ARE ROUGHLY  27,406,000  ACTIVE SOLDIERS"),
+                            ElementSize = 10,
+                            Color = Color.Black,
+                        }
+                    }
+                }
             });
-
-            UIItem NukesMessage1 = new UIItem()
-            {
-                Type = "Text",
-
-                Orientation = "Centre",
-                X = 0,
-                Y = 0,
-                CentreX = 0,
-                CentreY = 0,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("AS OF JANUARY 2023"),
-                    ElementSize = 10,
-                    Color = Color.Black,
-                }
-            };
-            UIItem NukesMessage2 = new UIItem()
-            {
-                Type = "Text",
-
-                Orientation = "Centre",
-                X = 0,
-                Y = 0,
-                CentreX = 0,
-                CentreY = 100,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("THERE ARE APPROXIMATLY  12,500  NUKES IN EXISTENCE"),
-                    ElementSize = 10,
-                    Color = Color.Black,
-                }
-            };
+            //Nukes Page
             UIPages.Add(new UIPage()
             {
                 Type = "Nukes",
 
-                UIItems = new List<UIItem>() { UniQuit, UniHome, WikiReturn, NukesMessage1, NukesMessage2 }
+                UIItems = new List<UIItem>()
+                {
+                    UniQuit, UniHome, WikiReturn,
+
+                    //Messages
+                    new UIItem()
+                    {
+                        Type = "Text",
+
+                        Orientation = "Centre",
+                        X = 0,
+                        Y = 0,
+                        CentreX = 0,
+                        CentreY = 0,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("AS OF JANUARY 2023"),
+                            ElementSize = 10,
+                            Color = Color.Black,
+                        }
+                    },
+                    new UIItem()
+                    {
+                        Type = "Text",
+
+                        Orientation = "Centre",
+                        X = 0,
+                        Y = 0,
+                        CentreX = 0,
+                        CentreY = 100,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("THERE ARE APPROXIMATLY  12,500  NUKES IN EXISTENCE"),
+                            ElementSize = 10,
+                            Color = Color.Black,
+                        }
+                    }
+                } 
             });
-
-            UIItem MoneyGlobalMessage1 = new UIItem()
-            {
-                Type = "Text",
-
-                Orientation = "Centre",
-                X = 0,
-                Y = 0,
-                CentreX = 0,
-                CentreY = 0,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("AS RECORDED IN 2022"),
-                    ElementSize = 10,
-                    Color = Color.Black,
-                }
-            };
-            UIItem MoneyGlobalMessage2 = new UIItem()
-            {
-                Type = "Text",
-
-                Orientation = "Centre",
-                X = 0,
-                Y = 0,
-                CentreX = 0,
-                CentreY = 100,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("THE APROXIMATE NUMBER OF US DOLLARS SPENT ON WAR GLOBALLY"),
-                    ElementSize = 10,
-                    Color = Color.Black,
-                }
-            };
-            UIItem MoneyGlobalMessage3 = new UIItem()
-            {
-                Type = "Text",
-
-                Orientation = "Centre",
-                X = 0,
-                Y = 0,
-                CentreX = 0,
-                CentreY = 200,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("REACHED  2.24  TRILLION"),
-                    ElementSize = 10,
-                    Color = Color.Black,
-                }
-            };
+            //Global Expenditure Page
             UIPages.Add(new UIPage()
             {
                 Type = "Money Global",
 
-                UIItems = new List<UIItem>() { UniQuit, UniHome, WikiReturn, MoneyGlobalMessage1, MoneyGlobalMessage2, MoneyGlobalMessage3 }
+                UIItems = new List<UIItem>()
+                {
+                    UniQuit, UniHome, WikiReturn,
+
+                    //Messages
+                    new UIItem()
+                    {
+                        Type = "Text",
+
+                        Orientation = "Centre",
+                        X = 0,
+                        Y = 0,
+                        CentreX = 0,
+                        CentreY = 0,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("AS RECORDED IN 2022"),
+                            ElementSize = 10,
+                            Color = Color.Black,
+                        }
+                    },
+                    new UIItem()
+                    {
+                        Type = "Text",
+
+                        Orientation = "Centre",
+                        X = 0,
+                        Y = 0,
+                        CentreX = 0,
+                        CentreY = 100,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("THE APROXIMATE NUMBER OF US DOLLARS SPENT ON WAR GLOBALLY"),
+                            ElementSize = 10,
+                            Color = Color.Black,
+                        }
+                    },
+                    new UIItem()
+                    {
+                        Type = "Text",
+
+                        Orientation = "Centre",
+                        X = 0,
+                        Y = 0,
+                        CentreX = 0,
+                        CentreY = 200,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("REACHED  2.24  TRILLION"),
+                            ElementSize = 10,
+                            Color = Color.Black,
+                        }
+                    }
+                }
             });
-
-            UIItem MoneyUSMessage1 = new UIItem()
-            {
-                Type = "Text",
-
-                Orientation = "Centre",
-                X = 0,
-                Y = 0,
-                CentreX = 0,
-                CentreY = 0,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("AS RECORDED IN 2022"),
-                    ElementSize = 10,
-                    Color = Color.Black,
-                }
-            };
-            UIItem MoneyUSMessage2 = new UIItem()
-            {
-                Type = "Text",
-
-                Orientation = "Centre",
-                X = 0,
-                Y = 0,
-                CentreX = 0,
-                CentreY = 100,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("THE APROXIMATE NUMBER OF DOLLARS SPENT ON WAR IN THE US"),
-                    ElementSize = 10,
-                    Color = Color.Black,
-                }
-            };
-            UIItem MoneyUSMessage3 = new UIItem()
-            {
-                Type = "Text",
-
-                Orientation = "Centre",
-                X = 0,
-                Y = 0,
-                CentreX = 0,
-                CentreY = 200,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("REACHED  844  BILLION"),
-                    ElementSize = 10,
-                    Color = Color.Black,
-                }
-            };
+            //U.S. Expenditure Page
             UIPages.Add(new UIPage()
             {
                 Type = "Money US",
 
-                UIItems = new List<UIItem>() { UniQuit, UniHome, WikiReturn, MoneyUSMessage1, MoneyUSMessage2, MoneyUSMessage3 }
+                UIItems = new List<UIItem>()
+                {
+                    UniQuit, UniHome, WikiReturn,
+
+                    //Messages
+                    new UIItem()
+                    {
+                        Type = "Text",
+
+                        Orientation = "Centre",
+                        X = 0,
+                        Y = 0,
+                        CentreX = 0,
+                        CentreY = 0,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("AS RECORDED IN 2022"),
+                            ElementSize = 10,
+                            Color = Color.Black,
+                        }
+                    },
+                    new UIItem()
+                    {
+                        Type = "Text",
+
+                        Orientation = "Centre",
+                        X = 0,
+                        Y = 0,
+                        CentreX = 0,
+                        CentreY = 100,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("THE APROXIMATE NUMBER OF DOLLARS SPENT ON WAR IN THE US"),
+                            ElementSize = 10,
+                            Color = Color.Black,
+                        }
+                    },
+                    new UIItem()
+                    {
+                        Type = "Text",
+
+                        Orientation = "Centre",
+                        X = 0,
+                        Y = 0,
+                        CentreX = 0,
+                        CentreY = 200,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("REACHED  844  BILLION"),
+                            ElementSize = 10,
+                            Color = Color.Black,
+                        }
+                    }
+                }
             });
-
-            UIItem DeathsMessage1 = new UIItem()
-            {
-                Type = "Text",
-
-                Orientation = "Centre",
-                X = 0,
-                Y = 0,
-                CentreX = 0,
-                CentreY = 0,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("SINCE THE YEAR 2001"),
-                    ElementSize = 10,
-                    Color = Color.Black,
-                }
-            };
-            UIItem DeathsMessage2 = new UIItem()
-            {
-                Type = "Text",
-
-                Orientation = "Centre",
-                X = 0,
-                Y = 0,
-                CentreX = 0,
-                CentreY = 100,
-
-                Text = new TextElement()
-                {
-                    Elements = TextCharacter.GetString("ATLEAST  432,000  CIVILIANS HAVE DIED IN WARS"),
-                    ElementSize = 10,
-                    Color = Color.Black,
-                }
-            };
+            //Civilian Deaths Page
             UIPages.Add(new UIPage()
             {
                 Type = "Deaths",
 
-                UIItems = new List<UIItem>() { UniQuit, UniHome, WikiReturn, DeathsMessage1, DeathsMessage2 }
-            });
+                UIItems = new List<UIItem>()
+                {
+                    UniQuit, UniHome, WikiReturn,
 
-            #endregion
+                    //Message
+                    new UIItem()
+                    {
+                        Type = "Text",
+
+                        Orientation = "Centre",
+                        X = 0,
+                        Y = 0,
+                        CentreX = 0,
+                        CentreY = 0,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("SINCE THE YEAR 2001"),
+                            ElementSize = 10,
+                            Color = Color.Black,
+                        }
+                    },
+                    new UIItem()
+                    {
+                        Type = "Text",
+
+                        Orientation = "Centre",
+                        X = 0,
+                        Y = 0,
+                        CentreX = 0,
+                        CentreY = 100,
+
+                        Text = new TextElement()
+                        {
+                            Elements = TextCharacter.GetString("ATLEAST  432,000  CIVILIANS HAVE DIED IN WARS"),
+                            ElementSize = 10,
+                            Color = Color.Black,
+                        }
+                    }
+                }
+            });
         }
 
         private void UI_RenderElements(List<UIItem> UIItems)
