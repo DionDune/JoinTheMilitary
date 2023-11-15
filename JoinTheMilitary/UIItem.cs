@@ -97,5 +97,10 @@ namespace JoinTheMilitary
             uIItems = new List<UIItem>();
             Visible = true;
         }
+
+        public void ToggleHighlight()
+        {
+            Highlighted = !Highlighted;
+        }
     }
 }

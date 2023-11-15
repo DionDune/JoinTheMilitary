@@ -1087,19 +1087,6 @@ namespace JoinTheMilitary
             _spriteBatch.Draw(Color_White, new Rectangle(X, Y + Height - BorderWidth, Width - BorderWidth, BorderWidth), color * BorderTransparency);
             _spriteBatch.Draw(Color_White, new Rectangle(X, Y + BorderWidth, BorderWidth, Height - (BorderWidth * 2)), color * BorderTransparency);
         }
-
-        private void UI_ItemToggleHighlight(UIItem item, bool toHighlight)
-        {
-            if (toHighlight)
-            {
-                item.Highlighted = true;
-            }
-            else
-            {
-                item.Highlighted = false;
-            }
-        }
-
         private void UI_ChangePage(string PageType)
         {
             GameState = PageType;
@@ -1293,11 +1280,14 @@ namespace JoinTheMilitary
                         if (Mouse.GetState().X > X && Mouse.GetState().X < X + Item.Width &&
                                     Mouse.GetState().Y > Y && Mouse.GetState().Y < Y + Item.Height)
                         {
-                            UI_ItemToggleHighlight(Item, true);
+                            if (!Item.Highlighted)
+                            {
+                                Item.ToggleHighlight();
+                            }
                         }
-                        else
+                        else if (Item.Highlighted)
                         {
-                            UI_ItemToggleHighlight(Item, false);
+                            Item.ToggleHighlight();
                         }
                     }
                 }
