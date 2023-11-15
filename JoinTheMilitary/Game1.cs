@@ -17,8 +17,6 @@ namespace JoinTheMilitary
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
-        Random random = new Random();
-        uint gameTick;
 
         string GameState;
         List<UIPage> UIPages;
