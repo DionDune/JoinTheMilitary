@@ -1360,13 +1360,9 @@ namespace JoinTheMilitary
             // BEGIN Draw ----
             _spriteBatch.Begin();
 
-            foreach (UIPage page in UIPages)
-            {
-                if (page.Type == GameState)
-                {
-                    UI_RenderElements(page.UIItems);
-                }
-            }
+
+            UI_RenderElements(UIPage_Current.UIItems);
+
 
             _spriteBatch.End();
             // END Draw ------
