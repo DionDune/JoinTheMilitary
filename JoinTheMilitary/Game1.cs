@@ -143,12 +143,6 @@ namespace JoinTheMilitary
                 {
                     UIPage_Current = page;
                 }
-                else
-                {
-                    Debug.WriteLine(page.Type);
-                    Debug.WriteLine(PageType);
-                    Debug.WriteLine("\n");
-                }
             }
         }
 
