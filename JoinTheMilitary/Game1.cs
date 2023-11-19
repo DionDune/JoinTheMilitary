@@ -28,7 +28,7 @@ namespace JoinTheMilitary
 
         #endregion
 
-        #region Initialize
+        #region Initialization
 
         public Game1()
         {
@@ -62,7 +62,7 @@ namespace JoinTheMilitary
 
         /////////////////////////////////////////
 
-        #region UI
+        #region UI Rendering/Interaction
 
         private void UI_RenderElements(List<UIItem> UIItems)
         {
