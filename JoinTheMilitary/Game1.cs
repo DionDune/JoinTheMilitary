@@ -44,7 +44,6 @@ namespace JoinTheMilitary
         protected override void Initialize()
         {
             UIPages = UIPage.GeneratePages(_graphics);
-
             UIPage_Current = UIPages[0];
 
             base.Initialize();
@@ -138,20 +137,17 @@ namespace JoinTheMilitary
 
         private void UI_ChangePage(string PageType)
         {
-            if (UIPage_Current != null)
+            foreach (UIPage page in UIPages)
             {
-                foreach (UIPage page in UIPages)
+                if (page.Type == PageType)
                 {
-                    if (page.Type == PageType)
-                    {
-                        UIPage_Current = page;
-                    }
-                    else
-                    {
-                        Debug.WriteLine(page.Type);
-                        Debug.WriteLine(PageType);
-                        Debug.WriteLine("\n");
-                    }
+                    UIPage_Current = page;
+                }
+                else
+                {
+                    Debug.WriteLine(page.Type);
+                    Debug.WriteLine(PageType);
+                    Debug.WriteLine("\n");
                 }
             }
         }
