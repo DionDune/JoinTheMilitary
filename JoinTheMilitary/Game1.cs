@@ -22,7 +22,7 @@ namespace JoinTheMilitary
         UIPage UIPage_Current;
 
         List<Keys> Keys_BeingPressed = new List<Keys>();
-        bool MouseClicking_Left;
+        bool Mouse_IsClickingLeft;
 
         Texture2D Color_White;
 
@@ -169,7 +169,7 @@ namespace JoinTheMilitary
         {
             if (Mouse.GetState().LeftButton == ButtonState.Pressed)
             {
-                if (!MouseClicking_Left && UIPage_Current != null)
+                if (!Mouse_IsClickingLeft && UIPage_Current != null)
                 {
                     List<string> Data = UIPage_Current.GetElementPressData(Mouse.GetState().Position, _graphics);
                     if (Data != null)
@@ -178,11 +178,11 @@ namespace JoinTheMilitary
                     }
                 }
 
-                MouseClicking_Left = true;
+                Mouse_IsClickingLeft = true;
             }
             else
             {
-                MouseClicking_Left = false;
+                Mouse_IsClickingLeft = false;
             }
         }
         private void UserInput_MouseMoveHandler()
