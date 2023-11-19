@@ -56,7 +56,9 @@ namespace JoinTheMilitary
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            Color_White = Content.Load<Texture2D>("Colour_White");
+            //Procedurally Creating and Assigning a 1x1 white texture to Color_White
+            Color_White = new Texture2D(GraphicsDevice, 1, 1);
+            Color_White.SetData(new Color[1] { Color.White });
         }
 
         #endregion
