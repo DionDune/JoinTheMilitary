@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using static System.Net.Mime.MediaTypeNames;
 using System.Collections.Generic;
 using System;
-using System.Numerics;
+//using System.Numerics;
 using System.Linq;
 using System.Diagnostics;
 
@@ -126,7 +126,7 @@ namespace JoinTheMilitary
                     Color = Color.White
                 },
 
-                Data = new List<string>() { "Info Continue" }
+                Data = new List<string>() { "Page Change", "Game Select" }
             };
 
 
@@ -162,7 +162,7 @@ namespace JoinTheMilitary
                             Color = Color.Black
                         },
 
-                        Data = new List<string>() { "ENLIST" }
+                        Data = new List<string>() { "Page Change", "Information" }
                     },
                     //Quit Button
                     new UIItem()
@@ -293,7 +293,7 @@ namespace JoinTheMilitary
                             Color = Color.Black
                         },
 
-                        Data = new List<string>() { "Info Continue" }
+                        Data = new List<string>() { "Page Change", "Game Select" }
                     },
                     //Quit
                     new UIItem()
@@ -348,7 +348,7 @@ namespace JoinTheMilitary
                         BorderColor = Color.Black,
                         BaseColor = Color.Wheat
                     },
-                    //Quiz Select
+                    //Example Select
                     new UIItem()
                     {
                         Type = "Button",
@@ -367,12 +367,12 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("KNOWLEDGE TEST"),
+                            Elements = TextCharacter.GetString("EXAMPLE"),
                             ElementSize = 6,
                             Color = Color.Black
                         },
 
-                        Data = new List<string>() { "Knowledge Test" }
+                        Data = new List<string>() { "Page Change", "null" }
                     },
                     //Wiki Select
                     new UIItem()
@@ -398,7 +398,7 @@ namespace JoinTheMilitary
                             Color = Color.Black
                         },
 
-                        Data = new List<string>() { "Wiki" }
+                        Data = new List<string>() { "Page Change", "Wiki" }
                     }
                 }
             });
@@ -453,7 +453,7 @@ namespace JoinTheMilitary
                             Color = Color.Black
                         },
 
-                        Data = new List<string>() { "Wars" }
+                        Data = new List<string>() { "Page Change", "Wars" }
                     },
                     //Soldiers Button
                     new UIItem()
@@ -479,7 +479,7 @@ namespace JoinTheMilitary
                             Color = Color.Black
                         },
 
-                        Data = new List<string>() { "Soldiers" }
+                        Data = new List<string>() { "Page Change", "Soldiers" }
                     },
                     //Nukes Button
                     new UIItem()
@@ -505,7 +505,7 @@ namespace JoinTheMilitary
                             Color = Color.Black
                         },
 
-                        Data = new List<string>() { "Nukes" }
+                        Data = new List<string>() { "Page Change", "Nukes" }
                     },
                     //Global Expenditure Button
                     new UIItem()
@@ -531,7 +531,7 @@ namespace JoinTheMilitary
                             Color = Color.Black
                         },
 
-                        Data = new List<string>() { "Money Global" }
+                        Data = new List<string>() { "Page Change", "Money Global" }
                     },
                     //U.S. Expenditure Button
                     new UIItem()
@@ -557,7 +557,7 @@ namespace JoinTheMilitary
                             Color = Color.Black
                         },
 
-                        Data = new List<string>() { "Money US" }
+                        Data = new List<string>() { "Page Change", "Money US" }
                     },
                     //Civilian Deaths Button
                     new UIItem()
@@ -583,7 +583,7 @@ namespace JoinTheMilitary
                             Color = Color.Black
                         },
 
-                        Data = new List<string>() { "Deaths" }
+                        Data = new List<string>() { "Page Change", "Deaths" }
                     }
                 }
             });
@@ -613,7 +613,7 @@ namespace JoinTheMilitary
                     Color = Color.White
                 },
 
-                Data = new List<string>() { "Wiki" }
+                Data = new List<string>() { "Page Change", "Wiki" }
             };
             //Wars Page
             UIPages.Add(new UIPage()
@@ -931,44 +931,15 @@ namespace JoinTheMilitary
         {
             foreach (UIItem Item in UIItems)
             {
-                int OrientatePosX = _graphics.PreferredBackBufferWidth / 2;
-                int OrientatePosY = _graphics.PreferredBackBufferHeight / 2;
-                switch (Item.Orientation)
-                {
-                    case "Bottom Left":
-                        OrientatePosX = 0;
-                        OrientatePosY = _graphics.PreferredBackBufferHeight;
-                        break;
-                    case "Left":
-                        OrientatePosX = 0;
-                        break;
-                    case "Top Left":
-                        OrientatePosX = 0;
-                        OrientatePosY = 0;
-                        break;
-                    case "Top":
-                        OrientatePosY = 0;
-                        break;
-                    case "Top Right":
-                        OrientatePosX = _graphics.PreferredBackBufferWidth;
-                        OrientatePosY = 0;
-                        break;
-                    case "Right":
-                        OrientatePosX = _graphics.PreferredBackBufferWidth;
-                        break;
-                    case "Bottom Right":
-                        OrientatePosX = _graphics.PreferredBackBufferWidth;
-                        OrientatePosY = _graphics.PreferredBackBufferHeight;
-                        break;
-                    case "Bottom":
-                        OrientatePosY = _graphics.PreferredBackBufferHeight;
-                        break;
-                }
+                int ScreenCentre_X = _graphics.PreferredBackBufferWidth / 2;
+                int ScreenCentre_Y = _graphics.PreferredBackBufferHeight / 2;
+                Point OrientationPosition = UIPage.GetOrientationPosition(ScreenCentre_X, ScreenCentre_Y, Item.Orientation, _graphics);
 
-                int X = OrientatePosX + Item.X;
-                int Y = OrientatePosY + Item.Y;
-                int CentreX = OrientatePosX + Item.CentreX;
-                int CentreY = OrientatePosY + Item.CentreY;
+                int X = OrientationPosition.X + Item.X;
+                int Y = OrientationPosition.Y + Item.Y;
+                int CentreX = OrientationPosition.X + Item.CentreX;
+                int CentreY = OrientationPosition.Y + Item.CentreY;
+
 
                 if (Item.Type == "Square Shape")
                 {
@@ -1001,92 +972,6 @@ namespace JoinTheMilitary
                         UI_RenderTextElements(Item.Text.Elements, CentreX, CentreY, Item.Text.ElementSize, Item.Text.Color);
                     }
                 }
-                if (Item.Type == "Fillbar")
-                {
-                    //Border
-                    UI_RenderOutline(Item.BorderColor, X, Y, Item.Width, Item.Height, Item.BorderWidth, Item.BorderTransparency);
-                    //Inner
-                    _spriteBatch.Draw(Color_White, new Rectangle(X + Item.BorderWidth, Y + Item.BorderWidth,
-                                                                   Item.Width - Item.BorderWidth * 2, Item.Height - Item.BorderWidth * 2),
-                                                                   Item.SubBorderColor * Item.SubBorderTransparency);
-                    //Bar
-                    _spriteBatch.Draw(Color_White, new Rectangle(X + Item.BorderWidth, Y + Item.BorderWidth,
-                                                                   (int)((Item.Value - Item.MinValue) / (float)Item.MaxValue * (Item.Width - Item.BorderWidth * 2)),
-                                                                   Item.Height - Item.BorderWidth * 2), Item.BaseColor * Item.BaseTransparency);
-                }
-                if (Item.Type == "Container")
-                {
-                    //Border
-                    UI_RenderOutline(Item.BorderColor, X, Y, Item.Width, Item.Height, Item.BorderWidth, Item.BorderTransparency);
-                    //Inner
-                    _spriteBatch.Draw(Color_White, new Rectangle(X + Item.BorderWidth, Y + Item.BorderWidth,
-                                                                   Item.Width - Item.BorderWidth * 2, Item.Height - Item.BorderWidth * 2),
-                                                                   Item.SubBorderColor * Item.SubBorderTransparency);
-                    if (Item.uIItems.Count > 0)
-                    {
-                        foreach (UIItem InnerItem in Item.uIItems)
-                        {
-                            switch (InnerItem.Orientation)
-                            {
-                                case "Bottom Left":
-                                    OrientatePosX = 0;
-                                    OrientatePosY = _graphics.PreferredBackBufferHeight;
-                                    break;
-                                case "Left":
-                                    OrientatePosX = 0;
-                                    break;
-                                case "Top Left":
-                                    OrientatePosX = 0;
-                                    OrientatePosY = 0;
-                                    break;
-                                case "Top":
-                                    OrientatePosY = 0;
-                                    break;
-                                case "Top Right":
-                                    OrientatePosX = _graphics.PreferredBackBufferWidth;
-                                    OrientatePosY = 0;
-                                    break;
-                                case "Right":
-                                    OrientatePosX = _graphics.PreferredBackBufferWidth;
-                                    break;
-                                case "Bottom Right":
-                                    OrientatePosX = _graphics.PreferredBackBufferWidth;
-                                    OrientatePosY = _graphics.PreferredBackBufferHeight;
-                                    break;
-                                case "Bottom":
-                                    OrientatePosY = _graphics.PreferredBackBufferHeight;
-                                    break;
-                            }
-                            X = OrientatePosX + InnerItem.X;
-                            Y = OrientatePosY + InnerItem.Y;
-                            CentreX = OrientatePosX + InnerItem.CentreX;
-                            CentreY = OrientatePosY + InnerItem.CentreY;
-
-                            if (InnerItem.Type == "Container Slot")
-                            {
-                                float BorderTransparency = InnerItem.BorderTransparency;
-                                float SubBorderTransparency = InnerItem.SubBorderTransparency;
-                                Color BorderColor = InnerItem.BorderColor;
-                                Color SubBorderColor = InnerItem.SubBorderColor;
-                                if (InnerItem.Highlighted)
-                                {
-                                    BorderTransparency = InnerItem.BorderHighlightedTransparency;
-                                    SubBorderTransparency = InnerItem.SubBorderHighlightedTransparency;
-                                    BorderColor = InnerItem.HighlightedBorderColor;
-                                    SubBorderColor = InnerItem.HighlightedColor;
-                                }
-
-
-                                //Border
-                                UI_RenderOutline(BorderColor, X, Y, InnerItem.Width, InnerItem.Height, InnerItem.BorderWidth, BorderTransparency);
-                                //Inner
-                                _spriteBatch.Draw(Color_White, new Rectangle(X + InnerItem.BorderWidth, Y + InnerItem.BorderWidth,
-                                                                               InnerItem.Width - InnerItem.BorderWidth * 2, InnerItem.Height - InnerItem.BorderWidth * 2),
-                                                                               SubBorderColor * SubBorderTransparency);
-                            }
-                        }
-                    }
-                }
             }
         }
         private void UI_RenderTextElements(List<List<bool>> Elements, int CentreX, int CentreY, int elementSize, Color elementColor)
@@ -1112,6 +997,7 @@ namespace JoinTheMilitary
             _spriteBatch.Draw(Color_White, new Rectangle(X, Y + Height - BorderWidth, Width - BorderWidth, BorderWidth), color * BorderTransparency);
             _spriteBatch.Draw(Color_White, new Rectangle(X, Y + BorderWidth, BorderWidth, Height - (BorderWidth * 2)), color * BorderTransparency);
         }
+
         private void UI_ChangePage(string PageType)
         {
             GameState = PageType;
@@ -1136,18 +1022,12 @@ namespace JoinTheMilitary
 
         #endregion
 
-        #region Keybinds
+        #region User Input Handling
 
-        private void KeyBind_Handler()
+        private void UserInput_KeyPressHandler()
         {
             Keys[] Keys_NewlyPressed = Keyboard.GetState().GetPressedKeys();
 
-
-            //Toggle Pause
-            if (Keys_NewlyPressed.Contains(Keys.Escape) && !Keys_BeingPressed.Contains(Keys.Escape))
-            {
-                UserControl_TogglePause();
-            }
 
             // Toggling FullScreen
             if (Keys_NewlyPressed.Contains(Keys.F) && !Keys_BeingPressed.Contains(Keys.F))
@@ -1155,8 +1035,61 @@ namespace JoinTheMilitary
                 Window_ToggleFullScreen();
             }
 
+
             Keys_BeingPressed = new List<Keys>(Keys_NewlyPressed);
         }
+
+        private void UserInput_MouseClickHandler()
+        {
+            if (Mouse.GetState().LeftButton == ButtonState.Pressed)
+            {
+                if (!MouseClicking_Left && UIPage_Current != null)
+                {
+                    List<string> Data = UIPage_Current.GetElementPressData(Mouse.GetState().Position, _graphics);
+                    if (Data != null)
+                    {
+                        UserControl_ButtonPress(Data);
+                    }
+                }
+
+                MouseClicking_Left = true;
+            }
+            else
+            {
+                MouseClicking_Left = false;
+            }
+        }
+        private void UserInput_MouseMoveHandler()
+        {
+            if (UIPage_Current != null)
+            {
+                UIPage_Current.UpdateHighlightedElements(Mouse.GetState().Position, _graphics);
+            }
+        }
+
+        private void UserControl_ButtonPress(List<string> Data)
+        {
+            if (Data != null)
+            {
+                if (Data.Count > 0)
+                {
+                    if (Data[0] == "Page Change")
+                    {
+                        UI_ChangePage(Data[1]);
+                    }
+                    else if (Data[0] == "Quit")
+                    {
+                        System.Environment.Exit(0);
+                    }
+                }
+            }
+        }
+
+        #endregion
+
+        /////////////////////////////////////////
+
+        #region Fundamental Features
 
         private void Window_ToggleFullScreen()
         {
@@ -1175,207 +1108,12 @@ namespace JoinTheMilitary
 
             _graphics.ToggleFullScreen();
         }
-        private void UserControl_TogglePause()
-        {
-            if (GameState == "Play")
-            {
-                UI_ChangePage("Pause");
-            }
-            else if (GameState == "Pause")
-            {
-                UI_ChangePage("Play");
-            }
-        }
-
-        #endregion
-
-        #region Mouse
-
-        private void MouseClick_Handler()
-        {
-            if (Mouse.GetState().LeftButton == ButtonState.Pressed)
-            {
-                if (!MouseClicking_Left)
-                {
-                    if (UIPage_Current != null)
-                    {
-                        foreach (UIItem Item in UIPage_Current.UIItems)
-                        {
-                            int OrientatePosX = _graphics.PreferredBackBufferWidth / 2;
-                            int OrientatePosY = _graphics.PreferredBackBufferHeight / 2;
-                            switch (Item.Orientation)
-                            {
-                                case "Bottom Left":
-                                    OrientatePosX = 0;
-                                    OrientatePosY = _graphics.PreferredBackBufferHeight;
-                                    break;
-                                case "Left":
-                                    OrientatePosX = 0;
-                                    break;
-                                case "Top Left":
-                                    OrientatePosX = 0;
-                                    OrientatePosY = 0;
-                                    break;
-                                case "Top":
-                                    OrientatePosY = 0;
-                                    break;
-                                case "Top Right":
-                                    OrientatePosX = _graphics.PreferredBackBufferWidth;
-                                    OrientatePosY = 0;
-                                    break;
-                                case "Right":
-                                    OrientatePosX = _graphics.PreferredBackBufferWidth;
-                                    break;
-                                case "Bottom Right":
-                                    OrientatePosX = _graphics.PreferredBackBufferWidth;
-                                    OrientatePosY = _graphics.PreferredBackBufferHeight;
-                                    break;
-                                case "Bottom":
-                                    OrientatePosY = _graphics.PreferredBackBufferHeight;
-                                    break;
-                            }
-
-                            int X = OrientatePosX + Item.X;
-                            int Y = OrientatePosY + Item.Y;
-
-                            if (Item.Type == "Button")
-                            {
-                                if (Mouse.GetState().X > X && Mouse.GetState().X < X + Item.Width &&
-                                    Mouse.GetState().Y > Y && Mouse.GetState().Y < Y + Item.Height)
-                                {
-                                    UserControl_ButtonPress(Item.Data);
-                                }
-                            }
-                        }
-                    }
-                }
-
-                MouseClicking_Left = true;
-            }
-            else
-            {
-                MouseClicking_Left = false;
-            }
-        }
-        private void MouseMove_Handler()
-        {
-            if (UIPage_Current != null)
-            {
-                foreach (UIItem Item in UIPage_Current.UIItems)
-                {
-                    int OrientatePosX = _graphics.PreferredBackBufferWidth / 2;
-                    int OrientatePosY = _graphics.PreferredBackBufferHeight / 2;
-                    switch (Item.Orientation)
-                    {
-                        case "Bottom Left":
-                            OrientatePosX = 0;
-                            OrientatePosY = _graphics.PreferredBackBufferHeight;
-                            break;
-                        case "Left":
-                            OrientatePosX = 0;
-                            break;
-                        case "Top Left":
-                            OrientatePosX = 0;
-                            OrientatePosY = 0;
-                            break;
-                        case "Top":
-                            OrientatePosY = 0;
-                            break;
-                        case "Top Right":
-                            OrientatePosX = _graphics.PreferredBackBufferWidth;
-                            OrientatePosY = 0;
-                            break;
-                        case "Right":
-                            OrientatePosX = _graphics.PreferredBackBufferWidth;
-                            break;
-                        case "Bottom Right":
-                            OrientatePosX = _graphics.PreferredBackBufferWidth;
-                            OrientatePosY = _graphics.PreferredBackBufferHeight;
-                            break;
-                        case "Bottom":
-                            OrientatePosY = _graphics.PreferredBackBufferHeight;
-                            break;
-                    }
-
-                    int X = OrientatePosX + Item.X;
-                    int Y = OrientatePosY + Item.Y;
-
-                    if (Item.Type == "Button")
-                    {
-                        if (Mouse.GetState().X > X && Mouse.GetState().X < X + Item.Width &&
-                                    Mouse.GetState().Y > Y && Mouse.GetState().Y < Y + Item.Height)
-                        {
-                            if (!Item.Highlighted)
-                            {
-                                Item.ToggleHighlight();
-                            }
-                        }
-                        else if (Item.Highlighted)
-                        {
-                            Item.ToggleHighlight();
-                        }
-                    }
-                }
-            }
-        }
-
-        private void UserControl_ButtonPress(List<string> Data)
-        {
-            if (Data.Count == 1)
-            {
-                switch (Data[0])
-                {
-                    case "Home":
-                        UI_ChangePage("Start");
-                        break;
-                    case "Resume":
-                        UI_ChangePage("Play");
-                        break;
-                    case "Quit":
-                        System.Environment.Exit(0);
-                        break;
-                    case "ENLIST":
-                        UI_ChangePage("Information");
-                        break;
-                    case "Info Continue":
-                        UI_ChangePage("Game Select");
-                        break;
-                    case "Wiki":
-                        UI_ChangePage("Wiki");
-                        break;
-                    case "Wars":
-                        UI_ChangePage("Wars");
-                        break;
-                    case "Soldiers":
-                        UI_ChangePage("Soldiers");
-                        break;
-                    case "Money Global":
-                        UI_ChangePage("Money Global");
-                        break;
-                    case "Money US":
-                        UI_ChangePage("Money US");
-                        break;
-                    case "Deaths":
-                        UI_ChangePage("Deaths");
-                        break;
-                    case "Nukes":
-                        UI_ChangePage("Nukes");
-                        break;
-                }
-            }
-        }
-
-        #endregion
-
-        /////////////////////////////////////////
-
-        #region Fundamentals
 
         protected override void Update(GameTime gameTime)
         {
-            KeyBind_Handler();
-            MouseClick_Handler();
-            MouseMove_Handler();
+            UserInput_KeyPressHandler();
+            UserInput_MouseClickHandler();
+            UserInput_MouseMoveHandler();
 
             base.Update(gameTime);
         }
