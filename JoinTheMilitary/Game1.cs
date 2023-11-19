@@ -18,7 +18,6 @@ namespace JoinTheMilitary
         private SpriteBatch _spriteBatch;
 
 
-        string GameState;
         List<UIPage> UIPages;
         UIPage UIPage_Current;
 
@@ -46,7 +45,6 @@ namespace JoinTheMilitary
         {
             UIPages = UIPage.GeneratePages(_graphics);
 
-            GameState = "Start";
             UIPage_Current = UIPages[0];
 
             base.Initialize();
@@ -140,13 +138,11 @@ namespace JoinTheMilitary
 
         private void UI_ChangePage(string PageType)
         {
-            GameState = PageType;
-
             if (UIPage_Current != null)
             {
                 foreach (UIPage page in UIPages)
                 {
-                    if (page.Type == GameState)
+                    if (page.Type == PageType)
                     {
                         UIPage_Current = page;
                     }
