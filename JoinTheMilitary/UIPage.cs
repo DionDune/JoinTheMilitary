@@ -615,7 +615,7 @@ namespace JoinTheMilitary
                         {
                             Elements = TextCharacter.GetString("THERE ARE 32 ONGOING WARS"),
                             ElementSize = 12,
-                            Color = Color.Black,
+                            Color = Color.Red,
                         }
                     }
                 }
@@ -661,7 +661,7 @@ namespace JoinTheMilitary
                         {
                             Elements = TextCharacter.GetString("THE ARE ROUGHLY  27,406,000  ACTIVE SOLDIERS"),
                             ElementSize = 10,
-                            Color = Color.Black,
+                            Color = Color.Red,
                         }
                     }
                 }
@@ -707,7 +707,7 @@ namespace JoinTheMilitary
                         {
                             Elements = TextCharacter.GetString("THERE ARE APPROXIMATLY  12,500  NUKES IN EXISTENCE"),
                             ElementSize = 10,
-                            Color = Color.Black,
+                            Color = Color.Red,
                         }
                     }
                 }
@@ -751,7 +751,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("THE APROXIMATE NUMBER OF US DOLLARS SPENT ON WAR GLOBALLY"),
+                            Elements = TextCharacter.GetString("THE APROXIMATE COST OF WAR GLOBALLY"),
                             ElementSize = 10,
                             Color = Color.Black,
                         }
@@ -768,9 +768,9 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("REACHED  2.24  TRILLION"),
+                            Elements = TextCharacter.GetString("REACHED  2.24  TRILLION U.S DOLLARS"),
                             ElementSize = 10,
-                            Color = Color.Black,
+                            Color = Color.Red,
                         }
                     }
                 }
@@ -814,7 +814,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("THE APROXIMATE NUMBER OF DOLLARS SPENT ON WAR IN THE US"),
+                            Elements = TextCharacter.GetString("THE APROXIMATE COST OF WAR IN THE US"),
                             ElementSize = 10,
                             Color = Color.Black,
                         }
@@ -831,9 +831,9 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("REACHED  844  BILLION"),
+                            Elements = TextCharacter.GetString("REACHED  844  BILLION U.S DOLLARS"),
                             ElementSize = 10,
-                            Color = Color.Black,
+                            Color = Color.Red,
                         }
                     }
                 }
@@ -879,7 +879,7 @@ namespace JoinTheMilitary
                         {
                             Elements = TextCharacter.GetString("ATLEAST  432,000  CIVILIANS HAVE DIED IN WARS"),
                             ElementSize = 10,
-                            Color = Color.Black,
+                            Color = Color.Red,
                         }
                     }
                 }
