@@ -12,7 +12,6 @@ namespace JoinTheMilitary
         public int XOffset { get; set; }
         public int YOffset { get; set; }
 
-        public string Text { get; set; }
 
         public List<List<bool>> Elements { get; set; }
         public int ElementSize { get; set; }
@@ -27,8 +26,7 @@ namespace JoinTheMilitary
             XOffset = 0;
             YOffset = 0;
 
-            Text = "EXAMPLE";
-            Elements = GetString(Text);
+            Elements = GetString("EXAMPLE");
             ElementSize = 5;
 
             Color = Color.Black;

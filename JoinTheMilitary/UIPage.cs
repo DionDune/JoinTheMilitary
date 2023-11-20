@@ -49,7 +49,6 @@ namespace JoinTheMilitary
 
                 Text = new TextElement()
                 {
-                    Text = "QUIT",
                     Elements = TextElement.GetString("QUIT"),
                     ElementSize = 3,
                     Color = Color.Black
@@ -115,7 +114,6 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Text = "ENLIST",
                             Elements = TextElement.GetString("ENLIST"),
                             ElementSize = 8,
                             Color = Color.Black
@@ -143,7 +141,6 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Text = "QUIT",
                             Elements = TextElement.GetString("QUIT"),
                             ElementSize = 8,
                             Color = Color.Black
@@ -162,7 +159,6 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Text = "WELCOME TO THE MILITARY!!!",
                             Elements = TextElement.GetString("WELCOME TO THE MILITARY!!!"),
                             ElementSize = 12,
                             Color = Color.Black
