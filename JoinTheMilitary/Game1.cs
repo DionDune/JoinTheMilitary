@@ -162,12 +162,15 @@ namespace JoinTheMilitary
 
         private void UserControl_ButtonPress(List<string> Data)
         {
+            //Ensures Data is not empty
             if (Data.Count > 0)
             {
+                //Initiates a Page Change
                 if (Data[0] == "Page Change")
                 {
                     UI_ChangePage(Data[1]);
                 }
+                //Kills the program
                 else if (Data[0] == "Quit")
                 {
                     System.Environment.Exit(0);
