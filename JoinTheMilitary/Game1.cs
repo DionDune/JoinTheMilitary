@@ -72,12 +72,16 @@ namespace JoinTheMilitary
             int StartX = CentreX - ((Elements[0].Count * elementSize) / 2);
             int StartY = CentreY - ((Elements.Count * elementSize) / 2);
 
+            // The value of y determins how far down the Y axis an element is rendered
             for (int y = 0; y < Elements.Count; y++)
             {
+                // The value of x determins how far along the X axis an element is rendered
                 for (int x = 0; x < Elements[0].Count; x++)
                 {
+                    //Checking if the a Pixel should be rendered
                     if (Elements[y][x])
                     {
+                        //Rendering a square at the position based on x,y, with its given elementSize and elementColor
                         _spriteBatch.Draw(Color_White, new Rectangle(StartX + (x * elementSize), StartY + (y * elementSize), elementSize, elementSize), elementColor);
                     }
                 }
@@ -125,19 +129,26 @@ namespace JoinTheMilitary
         {
             if (Mouse.GetState().LeftButton == ButtonState.Pressed)
             {
+                //Checking that the current detected click is a new click,
+                //and an error catch, ensuring there is a current page to compare the click to.
                 if (!Mouse_IsClickingLeft && UIPage_Current != null)
                 {
+                    //Checking if any data was received based on the MouseClick
                     List<string> Data = UIPage_Current.GetElementPressData(Mouse.GetState().Position, _graphics);
+
+                    //Checking if any data was received following the MouseClick
                     if (Data != null)
                     {
                         UserControl_ButtonPress(Data);
                     }
                 }
 
+                //Updating the Mouse Click bool if a click is detected
                 Mouse_IsClickingLeft = true;
             }
             else
             {
+                //Reseting the Mouse Click bool if a click is not detected
                 Mouse_IsClickingLeft = false;
             }
         }
@@ -208,31 +219,33 @@ namespace JoinTheMilitary
             _spriteBatch.Begin();
 
 
+            //Looping through each UI Element in the Current Page object
             foreach (UIItem Item in UIPage_Current.UIItems)
             {
+                //Getting the reletive position from the Items screen Orientation
                 int ScreenCentre_X = _graphics.PreferredBackBufferWidth / 2;
                 int ScreenCentre_Y = _graphics.PreferredBackBufferHeight / 2;
                 Point OrientationPosition = UIPage.GetOrientationPosition(ScreenCentre_X, ScreenCentre_Y, Item.Orientation, _graphics);
 
+                //Calculating the items true screen position
                 int X = OrientationPosition.X + Item.X;
                 int Y = OrientationPosition.Y + Item.Y;
                 int CentreX = OrientationPosition.X + Item.CentreX;
                 int CentreY = OrientationPosition.Y + Item.CentreY;
-
 
                 if (Item.Type == "Square Shape")
                 {
                     UI_RenderOutline(Item.BorderColor, X, Y, Item.Width, Item.Height, Item.BorderWidth, 1F);
                     _spriteBatch.Draw(Color_White, new Rectangle(X + Item.BorderWidth, Y + Item.BorderWidth, Item.Width - Item.BorderWidth * 2, Item.Height - Item.BorderWidth * 2), Item.BaseColor);
                 }
-                if (Item.Type == "Text")
+                else if (Item.Type == "Text")
                 {
                     if (Item.Text != null)
                     {
                         UI_RenderTextElements(Item.Text.Elements, CentreX, CentreY, Item.Text.ElementSize, Item.Text.Color);
                     }
                 }
-                if (Item.Type == "Button")
+                else if (Item.Type == "Button")
                 {
                     _spriteBatch.Draw(Color_White, new Rectangle(X, Y, Item.Width, Item.Height), Item.BorderColor);
                     if (!Item.Highlighted)
