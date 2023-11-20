@@ -960,9 +960,9 @@ namespace JoinTheMilitary
                 int X = OrientationPosition.X + Item.X;
                 int Y = OrientationPosition.Y + Item.Y;
 
-                //Checking if the mouses position falls withing the bounds of the UIItem
                 if (Item.Type == "Button")
                 {
+                    //Checking if the mouses position falls withing the bounds of the UIItem
                     if (MousePosition.X > X && MousePosition.X < X + Item.Width &&
                                 MousePosition.Y > Y && MousePosition.Y < Y + Item.Height)
                     {
