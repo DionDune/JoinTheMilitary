@@ -27,31 +27,15 @@ namespace JoinTheMilitary
 
         public Color BaseColor { get; set; }
         public Color BorderColor { get; set; }
-        public Color SubBorderColor { get; set; }
         public Color HighlightedColor { get; set; }
-        public Color HighlightedBorderColor { get; set; }
 
-        public float BorderTransparency { get; set; }
-        public float SubBorderTransparency { get; set; }
-        public float BaseTransparency { get; set; }
-        public float BorderHighlightedTransparency { get; set; }
-        public float SubBorderHighlightedTransparency { get; set; }
-
-        public int MinValue { get; set; }
-        public int MaxValue { get; set; }
-        public int Value { get; set; }
 
         public List<string> Data { get; set; }
-        public List<int> NumericalData { get; set; }
-        public UIPage TargetPage { get; set; }
-        
 
-        public int FillDirection { get; set; }
 
         public TextElement Text { get; set; }
 
         public List<UIItem> uIItems { get; set; }
-        public bool Visible { get; set; }
 
         public UIItem()
         {
@@ -73,29 +57,12 @@ namespace JoinTheMilitary
 
             BaseColor = Color.Purple;
             BorderColor = Color.Black;
-            SubBorderColor = Color.Purple;
             HighlightedColor = Color.Gold;
-            HighlightedBorderColor = Color.DarkGoldenrod;
-
-            BorderTransparency = 1F;
-            BaseTransparency = 1F;
-            BorderHighlightedTransparency = 1F;
-            SubBorderHighlightedTransparency = 1F;
-
-            MinValue = 0;
-            MaxValue = 1;
-            Value = 0;
-            FillDirection = 0;
 
             Data = null;
-            NumericalData = null;
-            TargetPage = null;
-
-
             Text = null;
 
             uIItems = new List<UIItem>();
-            Visible = true;
         }
 
         public void ToggleHighlight()
