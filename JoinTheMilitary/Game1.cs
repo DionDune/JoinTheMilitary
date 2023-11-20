@@ -162,18 +162,15 @@ namespace JoinTheMilitary
 
         private void UserControl_ButtonPress(List<string> Data)
         {
-            if (Data != null)
+            if (Data.Count > 0)
             {
-                if (Data.Count > 0)
+                if (Data[0] == "Page Change")
                 {
-                    if (Data[0] == "Page Change")
-                    {
-                        UI_ChangePage(Data[1]);
-                    }
-                    else if (Data[0] == "Quit")
-                    {
-                        System.Environment.Exit(0);
-                    }
+                    UI_ChangePage(Data[1]);
+                }
+                else if (Data[0] == "Quit")
+                {
+                    System.Environment.Exit(0);
                 }
             }
         }
