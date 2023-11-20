@@ -50,7 +50,7 @@ namespace JoinTheMilitary
                 Text = new TextElement()
                 {
                     Text = "QUIT",
-                    Elements = TextCharacter.GetString("QUIT"),
+                    Elements = TextElement.GetString("QUIT"),
                     ElementSize = 3,
                     Color = Color.Black
                 },
@@ -80,7 +80,7 @@ namespace JoinTheMilitary
 
                 Text = new TextElement()
                 {
-                    Elements = TextCharacter.GetString("HOME"),
+                    Elements = TextElement.GetString("HOME"),
                     ElementSize = 3,
                     Color = Color.White
                 },
@@ -116,7 +116,7 @@ namespace JoinTheMilitary
                         Text = new TextElement()
                         {
                             Text = "ENLIST",
-                            Elements = TextCharacter.GetString("ENLIST"),
+                            Elements = TextElement.GetString("ENLIST"),
                             ElementSize = 8,
                             Color = Color.Black
                         },
@@ -144,7 +144,7 @@ namespace JoinTheMilitary
                         Text = new TextElement()
                         {
                             Text = "QUIT",
-                            Elements = TextCharacter.GetString("QUIT"),
+                            Elements = TextElement.GetString("QUIT"),
                             ElementSize = 8,
                             Color = Color.Black
                         },
@@ -163,7 +163,7 @@ namespace JoinTheMilitary
                         Text = new TextElement()
                         {
                             Text = "WELCOME TO THE MILITARY!!!",
-                            Elements = TextCharacter.GetString("WELCOME TO THE MILITARY!!!"),
+                            Elements = TextElement.GetString("WELCOME TO THE MILITARY!!!"),
                             ElementSize = 12,
                             Color = Color.Black
                         }
@@ -191,7 +191,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("OURS IS NOT TO REASON WHY"),
+                            Elements = TextElement.GetString("OURS IS NOT TO REASON WHY"),
                             ElementSize = 12,
                             Color = Color.Black
                         }
@@ -207,7 +207,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("OURS IS BUT TO DO AND DIE"),
+                            Elements = TextElement.GetString("OURS IS BUT TO DO AND DIE"),
                             ElementSize = 12,
                             Color = Color.Black
                         }
@@ -223,7 +223,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("ARE YOU PREPARED TO DIE FOR YOUR STATE?"),
+                            Elements = TextElement.GetString("ARE YOU PREPARED TO DIE FOR YOUR STATE?"),
                             ElementSize = 9,
                             Color = Color.Red
                         }
@@ -247,7 +247,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("YES!"),
+                            Elements = TextElement.GetString("YES!"),
                             ElementSize = 8,
                             Color = Color.Black
                         },
@@ -274,7 +274,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("NO"),
+                            Elements = TextElement.GetString("NO"),
                             ElementSize = 8,
                             Color = Color.Black
                         },
@@ -326,7 +326,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("EXAMPLE"),
+                            Elements = TextElement.GetString("EXAMPLE"),
                             ElementSize = 6,
                             Color = Color.Black
                         },
@@ -352,7 +352,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("INFORMATION"),
+                            Elements = TextElement.GetString("INFORMATION"),
                             ElementSize = 7,
                             Color = Color.Black
                         },
@@ -383,7 +383,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("MILITARY WIKI"),
+                            Elements = TextElement.GetString("MILITARY WIKI"),
                             ElementSize = 14,
                             Color = Color.Black
                         }
@@ -407,7 +407,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("NUMBER OF WARS RIGHT NOW"),
+                            Elements = TextElement.GetString("NUMBER OF WARS RIGHT NOW"),
                             ElementSize = 5,
                             Color = Color.Black
                         },
@@ -433,7 +433,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("NUMBER OF SOLDIERS RIGHT NOW"),
+                            Elements = TextElement.GetString("NUMBER OF SOLDIERS RIGHT NOW"),
                             ElementSize = 5,
                             Color = Color.Black
                         },
@@ -459,7 +459,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("NUMBER OF NUKES RIGHT NOW"),
+                            Elements = TextElement.GetString("NUMBER OF NUKES RIGHT NOW"),
                             ElementSize = 5,
                             Color = Color.Black
                         },
@@ -485,7 +485,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("MONEY SPENT ON WAR GLOBALLY"),
+                            Elements = TextElement.GetString("MONEY SPENT ON WAR GLOBALLY"),
                             ElementSize = 5,
                             Color = Color.Black
                         },
@@ -511,7 +511,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("MONEY SPENT ON WAR IN THE US"),
+                            Elements = TextElement.GetString("MONEY SPENT ON WAR IN THE US"),
                             ElementSize = 5,
                             Color = Color.Black
                         },
@@ -537,7 +537,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("CIVILIAN DEATHS THIS CENTURY"),
+                            Elements = TextElement.GetString("CIVILIAN DEATHS THIS CENTURY"),
                             ElementSize = 5,
                             Color = Color.Black
                         },
@@ -567,7 +567,7 @@ namespace JoinTheMilitary
 
                 Text = new TextElement()
                 {
-                    Elements = TextCharacter.GetString("RETURN TO WIKI"),
+                    Elements = TextElement.GetString("RETURN TO WIKI"),
                     ElementSize = 5,
                     Color = Color.White
                 },
@@ -596,7 +596,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("AS OF 13TH OF NOVEMBER 2023"),
+                            Elements = TextElement.GetString("AS OF 13TH OF NOVEMBER 2023"),
                             ElementSize = 10,
                             Color = Color.Black,
                         }
@@ -613,7 +613,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("THERE ARE 32 ONGOING WARS"),
+                            Elements = TextElement.GetString("THERE ARE 32 ONGOING WARS"),
                             ElementSize = 12,
                             Color = Color.Red,
                         }
@@ -642,7 +642,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("AS RECORDED IN 2020"),
+                            Elements = TextElement.GetString("AS RECORDED IN 2020"),
                             ElementSize = 10,
                             Color = Color.Black,
                         }
@@ -659,7 +659,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("THE ARE ROUGHLY  27,406,000  ACTIVE SOLDIERS"),
+                            Elements = TextElement.GetString("THE ARE ROUGHLY  27,406,000  ACTIVE SOLDIERS"),
                             ElementSize = 10,
                             Color = Color.Red,
                         }
@@ -688,7 +688,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("AS OF JANUARY 2023"),
+                            Elements = TextElement.GetString("AS OF JANUARY 2023"),
                             ElementSize = 10,
                             Color = Color.Black,
                         }
@@ -705,7 +705,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("THERE ARE APPROXIMATLY  12,500  NUKES IN EXISTENCE"),
+                            Elements = TextElement.GetString("THERE ARE APPROXIMATLY  12,500  NUKES IN EXISTENCE"),
                             ElementSize = 10,
                             Color = Color.Red,
                         }
@@ -734,7 +734,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("AS RECORDED IN 2022"),
+                            Elements = TextElement.GetString("AS RECORDED IN 2022"),
                             ElementSize = 10,
                             Color = Color.Black,
                         }
@@ -751,7 +751,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("THE APROXIMATE COST OF WAR GLOBALLY"),
+                            Elements = TextElement.GetString("THE APROXIMATE COST OF WAR GLOBALLY"),
                             ElementSize = 10,
                             Color = Color.Black,
                         }
@@ -768,7 +768,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("REACHED  2.24  TRILLION U.S DOLLARS"),
+                            Elements = TextElement.GetString("REACHED  2.24  TRILLION U.S DOLLARS"),
                             ElementSize = 10,
                             Color = Color.Red,
                         }
@@ -797,7 +797,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("AS RECORDED IN 2022"),
+                            Elements = TextElement.GetString("AS RECORDED IN 2022"),
                             ElementSize = 10,
                             Color = Color.Black,
                         }
@@ -814,7 +814,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("THE APROXIMATE COST OF WAR IN THE US"),
+                            Elements = TextElement.GetString("THE APROXIMATE COST OF WAR IN THE US"),
                             ElementSize = 10,
                             Color = Color.Black,
                         }
@@ -831,7 +831,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("REACHED  844  BILLION U.S DOLLARS"),
+                            Elements = TextElement.GetString("REACHED  844  BILLION U.S DOLLARS"),
                             ElementSize = 10,
                             Color = Color.Red,
                         }
@@ -860,7 +860,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("SINCE THE YEAR 2001"),
+                            Elements = TextElement.GetString("SINCE THE YEAR 2001"),
                             ElementSize = 10,
                             Color = Color.Black,
                         }
@@ -877,7 +877,7 @@ namespace JoinTheMilitary
 
                         Text = new TextElement()
                         {
-                            Elements = TextCharacter.GetString("ATLEAST  432,000  CIVILIANS HAVE DIED IN WARS"),
+                            Elements = TextElement.GetString("ATLEAST  432,000  CIVILIANS HAVE DIED IN WARS"),
                             ElementSize = 10,
                             Color = Color.Red,
                         }
