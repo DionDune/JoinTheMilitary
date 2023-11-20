@@ -17,9 +17,6 @@ namespace JoinTheMilitary
         public int ElementSize { get; set; }
 
         public Color Color { get; set; }
-        public Color BackgroundColor { get; set; }
-
-        public bool hasBackground { get; set; }
 
         public TextElement()
         {
@@ -30,9 +27,6 @@ namespace JoinTheMilitary
             ElementSize = 5;
 
             Color = Color.Black;
-            BackgroundColor = Color.White;
-
-            hasBackground = false;
         }
 
         public static List<List<bool>> GetLetter(char Character)
