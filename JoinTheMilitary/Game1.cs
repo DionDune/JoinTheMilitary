@@ -99,6 +99,8 @@ namespace JoinTheMilitary
         {
             foreach (UIPage page in UIPages)
             {
+                //If the Page Type matches the given Page Type,
+                //the Current Page is updated
                 if (page.Type == PageType)
                 {
                     UIPage_Current = page;
