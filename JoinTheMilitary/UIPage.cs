@@ -26,7 +26,7 @@ namespace JoinTheMilitary
         {
             List<UIPage> UIPages = new List<UIPage>();
 
-
+            //Use Universal Buttons as guide
             //Universal Quit Button
             UIItem UniQuit = new UIItem()
             {
@@ -40,6 +40,8 @@ namespace JoinTheMilitary
                 Width = 50,
                 Height = 20,
 
+                //Defined as the Items position, plus half of the items width.
+                //This can be freely changed to render the items text anywhere on the screen
                 CentreX = 15 + (50 / 2),
                 CentreY = 15 + (20 / 2),
 

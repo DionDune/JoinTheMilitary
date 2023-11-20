@@ -4,7 +4,6 @@ using Microsoft.Xna.Framework.Input;
 using static System.Net.Mime.MediaTypeNames;
 using System.Collections.Generic;
 using System;
-//using System.Numerics;
 using System.Linq;
 using System.Diagnostics;
 
@@ -17,13 +16,16 @@ namespace JoinTheMilitary
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
-
+        // Storing all created Pages
         List<UIPage> UIPages;
+        // Saving currently selected Page
         UIPage UIPage_Current;
 
+        // Saving previous user inputs
         List<Keys> Keys_BeingPressed = new List<Keys>();
         bool Mouse_IsClickingLeft;
 
+        // Used for rendering as a default Colour
         Texture2D Color_White;
 
         #endregion
@@ -32,6 +34,7 @@ namespace JoinTheMilitary
 
         public Game1()
         {
+            //Chaging the default size of the window
             _graphics = new GraphicsDeviceManager(this);
             _graphics.PreferredBackBufferWidth = 1800;
             _graphics.PreferredBackBufferHeight = 1000;
@@ -64,53 +67,6 @@ namespace JoinTheMilitary
 
         #region UI Rendering/Interaction
 
-        private void UI_RenderElements(List<UIItem> UIItems)
-        {
-            foreach (UIItem Item in UIItems)
-            {
-                int ScreenCentre_X = _graphics.PreferredBackBufferWidth / 2;
-                int ScreenCentre_Y = _graphics.PreferredBackBufferHeight / 2;
-                Point OrientationPosition = UIPage.GetOrientationPosition(ScreenCentre_X, ScreenCentre_Y, Item.Orientation, _graphics);
-
-                int X = OrientationPosition.X + Item.X;
-                int Y = OrientationPosition.Y + Item.Y;
-                int CentreX = OrientationPosition.X + Item.CentreX;
-                int CentreY = OrientationPosition.Y + Item.CentreY;
-
-
-                if (Item.Type == "Square Shape")
-                {
-                    UI_RenderOutline(Item.BorderColor, X, Y, Item.Width, Item.Height, Item.BorderWidth, 1F);
-                    _spriteBatch.Draw(Color_White, new Rectangle(X + Item.BorderWidth, Y + Item.BorderWidth, Item.Width - Item.BorderWidth * 2, Item.Height - Item.BorderWidth * 2), Item.BaseColor);
-                }
-                if (Item.Type == "Text")
-                {
-                    if (Item.Text != null)
-                    {
-                        UI_RenderTextElements(Item.Text.Elements, CentreX, CentreY, Item.Text.ElementSize, Item.Text.Color);
-                    }
-                }
-                if (Item.Type == "Button")
-                {
-                    _spriteBatch.Draw(Color_White, new Rectangle(X, Y, Item.Width, Item.Height), Item.BorderColor);
-                    if (!Item.Highlighted)
-                    {
-                        _spriteBatch.Draw(Color_White, new Rectangle(X + Item.BorderWidth, Y + Item.BorderWidth,
-                                                                   Item.Width - Item.BorderWidth * 2, Item.Height - Item.BorderWidth * 2), Item.BaseColor);
-                    }
-                    else
-                    {
-                        _spriteBatch.Draw(Color_White, new Rectangle(X + Item.BorderWidth, Y + Item.BorderWidth,
-                                                                   Item.Width - Item.BorderWidth * 2, Item.Height - Item.BorderWidth * 2), Item.HighlightedColor);
-                    }
-
-                    if (Item.Text != null)
-                    {
-                        UI_RenderTextElements(Item.Text.Elements, CentreX, CentreY, Item.Text.ElementSize, Item.Text.Color);
-                    }
-                }
-            }
-        }
         private void UI_RenderTextElements(List<List<bool>> Elements, int CentreX, int CentreY, int elementSize, Color elementColor)
         {
             int StartX = CentreX - ((Elements[0].Count * elementSize) / 2);
@@ -252,7 +208,50 @@ namespace JoinTheMilitary
             _spriteBatch.Begin();
 
 
-            UI_RenderElements(UIPage_Current.UIItems);
+            foreach (UIItem Item in UIPage_Current.UIItems)
+            {
+                int ScreenCentre_X = _graphics.PreferredBackBufferWidth / 2;
+                int ScreenCentre_Y = _graphics.PreferredBackBufferHeight / 2;
+                Point OrientationPosition = UIPage.GetOrientationPosition(ScreenCentre_X, ScreenCentre_Y, Item.Orientation, _graphics);
+
+                int X = OrientationPosition.X + Item.X;
+                int Y = OrientationPosition.Y + Item.Y;
+                int CentreX = OrientationPosition.X + Item.CentreX;
+                int CentreY = OrientationPosition.Y + Item.CentreY;
+
+
+                if (Item.Type == "Square Shape")
+                {
+                    UI_RenderOutline(Item.BorderColor, X, Y, Item.Width, Item.Height, Item.BorderWidth, 1F);
+                    _spriteBatch.Draw(Color_White, new Rectangle(X + Item.BorderWidth, Y + Item.BorderWidth, Item.Width - Item.BorderWidth * 2, Item.Height - Item.BorderWidth * 2), Item.BaseColor);
+                }
+                if (Item.Type == "Text")
+                {
+                    if (Item.Text != null)
+                    {
+                        UI_RenderTextElements(Item.Text.Elements, CentreX, CentreY, Item.Text.ElementSize, Item.Text.Color);
+                    }
+                }
+                if (Item.Type == "Button")
+                {
+                    _spriteBatch.Draw(Color_White, new Rectangle(X, Y, Item.Width, Item.Height), Item.BorderColor);
+                    if (!Item.Highlighted)
+                    {
+                        _spriteBatch.Draw(Color_White, new Rectangle(X + Item.BorderWidth, Y + Item.BorderWidth,
+                                                                   Item.Width - Item.BorderWidth * 2, Item.Height - Item.BorderWidth * 2), Item.BaseColor);
+                    }
+                    else
+                    {
+                        _spriteBatch.Draw(Color_White, new Rectangle(X + Item.BorderWidth, Y + Item.BorderWidth,
+                                                                   Item.Width - Item.BorderWidth * 2, Item.Height - Item.BorderWidth * 2), Item.HighlightedColor);
+                    }
+
+                    if (Item.Text != null)
+                    {
+                        UI_RenderTextElements(Item.Text.Elements, CentreX, CentreY, Item.Text.ElementSize, Item.Text.Color);
+                    }
+                }
+            }
 
 
             _spriteBatch.End();
