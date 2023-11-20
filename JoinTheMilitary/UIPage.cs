@@ -933,8 +933,8 @@ namespace JoinTheMilitary
 
                 if (Item.Type == "Button")
                 {
-                    if (Mouse.GetState().X > X && Mouse.GetState().X < X + Item.Width &&
-                        Mouse.GetState().Y > Y && Mouse.GetState().Y < Y + Item.Height)
+                    if (MousePosition.X > X && MousePosition.X < X + Item.Width &&
+                        MousePosition.Y > Y && MousePosition.Y < Y + Item.Height)
                     {
                         return Item.Data;
                     }
@@ -957,8 +957,8 @@ namespace JoinTheMilitary
 
                 if (Item.Type == "Button")
                 {
-                    if (Mouse.GetState().X > X && Mouse.GetState().X < X + Item.Width &&
-                                Mouse.GetState().Y > Y && Mouse.GetState().Y < Y + Item.Height)
+                    if (MousePosition.X > X && MousePosition.X < X + Item.Width &&
+                                MousePosition.Y > Y && MousePosition.Y < Y + Item.Height)
                     {
                         if (!Item.Highlighted)
                         {
