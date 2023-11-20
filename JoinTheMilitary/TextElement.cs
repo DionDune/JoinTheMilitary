@@ -9,10 +9,6 @@ namespace JoinTheMilitary
 {
     internal class TextElement
     {
-        public int XOffset { get; set; }
-        public int YOffset { get; set; }
-
-
         public List<List<bool>> Elements { get; set; }
         public int ElementSize { get; set; }
 
@@ -20,8 +16,6 @@ namespace JoinTheMilitary
 
         public TextElement()
         {
-            XOffset = 0;
-            YOffset = 0;
 
             Elements = GetString("EXAMPLE");
             ElementSize = 5;
