@@ -941,7 +941,6 @@ namespace JoinTheMilitary
                     {
                         return Item.Data;
                     }
-                            
                 }
             }
 
@@ -952,13 +951,16 @@ namespace JoinTheMilitary
         {
             foreach (UIItem Item in UIItems)
             {
+                //Getting the reletive position from the Items screen Orientation
                 int ScreenCentre_X = Window.PreferredBackBufferWidth / 2;
                 int ScreenCentre_Y = Window.PreferredBackBufferHeight / 2;
                 Point OrientationPosition = GetOrientationPosition(ScreenCentre_X, ScreenCentre_Y, Item.Orientation, Window);
 
+                //Calculating the items true screen position
                 int X = OrientationPosition.X + Item.X;
                 int Y = OrientationPosition.Y + Item.Y;
 
+                //Checking if the mouses position falls withing the bounds of the UIItem
                 if (Item.Type == "Button")
                 {
                     if (MousePosition.X > X && MousePosition.X < X + Item.Width &&
@@ -966,12 +968,12 @@ namespace JoinTheMilitary
                     {
                         if (!Item.Highlighted)
                         {
-                            Item.ToggleHighlight();
+                            Item.Highlighted = true;
                         }
                     }
                     else if (Item.Highlighted)
                     {
-                        Item.ToggleHighlight();
+                        Item.Highlighted = false;
                     }
                 }
             }
